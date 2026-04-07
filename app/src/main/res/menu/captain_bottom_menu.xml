@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_captain_matches"
+        android:title="Matches"
+        android:icon="@drawable/ic_event"/>
+
+    <item
+        android:id="@+id/nav_captain_events"
+        android:title="Events"
+        android:icon="@drawable/ic_calendar"/>
+
+    <item
+        android:id="@+id/nav_captain_team"
+        android:title="Team"
+        android:icon="@drawable/ic_add_team"/>
+    <item
+        android:id="@+id/nav_captain_score"
+        android:title="Score"
+        android:icon="@drawable/ic_trophy"/>
+
+    <item
+        android:id="@+id/nav_captain_profile"
+        android:title="Profile"
+        android:icon="@drawable/ic_user"/>
+
+</menu>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_create_team"
+        android:title="Create Team"
+        android:icon="@drawable/ic_add_team"/>
+
+    <item
+        android:id="@+id/nav_admin_dashboard"
+        android:icon="@drawable/ic_students"
+        android:title="Dashboard" />
+
+    <item
+        android:id="@+id/nav_admin_fixtures"
+        android:icon="@drawable/ic_fixtures"
+        android:title="Fixtures" />
+
+    <item
+        android:id="@+id/nav_admin_trials"
+        android:icon="@drawable/ic_trials"
+        android:title="Trials" />
+
+    <item
+        android:id="@+id/nav_admin_profile"
+        android:icon="@drawable/ic_user"
+        android:title="Profile" />
+
+</menu>

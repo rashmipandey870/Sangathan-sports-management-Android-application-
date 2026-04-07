@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="8dp"
+    android:background="@drawable/bg_circle_dark">
+
+    <ImageView
+        android:id="@+id/imgSportIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_cricket"
+        android:padding="10dp"/>
+
+    <TextView
+        android:id="@+id/tvSportName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cricket"
+        android:textSize="10sp"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="6dp"/>
+</LinearLayout>

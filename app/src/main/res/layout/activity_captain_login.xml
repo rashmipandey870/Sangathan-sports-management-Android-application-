@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#F8FAFC">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Captain Login"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#0F172A"/>
+
+    <EditText
+        android:id="@+id/et_team_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Team Name"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/et_pin_captain"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter PIN"
+        android:inputType="number"
+        android:layout_marginTop="12dp"/>
+
+    <Button
+        android:id="@+id/btn_login_captain"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Login"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#2563EB"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

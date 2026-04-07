@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F7FB">
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="#1E293B">
+
+        <TextView
+            android:id="@+id/tv_team_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team Players"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- INFO BAR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="#E2E8F0">
+
+        <TextView
+            android:id="@+id/tv_selected_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selected: 0"
+            android:textStyle="bold"
+            android:textColor="#0F172A"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <!-- STUDENT LIST -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_students"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:clipToPadding="false"/>
+
+    <!-- OPTIONAL ACTION BUTTON (ONLY FOR CAPTAIN) -->
+    <Button
+        android:id="@+id/btn_finalize_team"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Finalize Team"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:background="@drawable/btn_primary"
+        android:layout_margin="12dp"/>
+
+</LinearLayout>

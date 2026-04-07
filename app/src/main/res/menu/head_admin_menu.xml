@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_overview"
+        android:title="Overview"
+        android:icon="@drawable/ic_home"/>
+
+    <item
+        android:id="@+id/nav_coordinators"
+        android:title="Coordinators"
+        android:icon="@drawable/ic_user"/>
+
+    <item
+        android:id="@+id/nav_captains"
+        android:title="Captains"
+        android:icon="@drawable/ic_add_team"/>
+
+    <item
+        android:id="@+id/nav_analytics"
+        android:title="Analytics"
+        android:icon="@drawable/ic_trophy"/>
+
+</menu>

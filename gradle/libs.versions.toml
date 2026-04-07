@@ -1,0 +1,37 @@
+# This is a version catalog for a Java and XML-based Android project.
+# All Kotlin and Jetpack Compose definitions have been removed.
+
+[versions]
+# Android Gradle Plugin
+agp = "8.12.3"
+
+# Required AndroidX Libraries for Java
+core = "1.13.1"          # Note: This is core, not core-ktx
+appcompat = "1.7.0"
+activity = "1.9.0"
+constraintlayout = "2.1.4"
+material = "1.13.0"      # Google Material Design Components
+
+# Testing Libraries
+junit = "4.13.2"
+junitExt = "1.2.1"
+espressoCore = "3.6.1"
+firebaseInappmessaging = "22.0.2"
+
+[libraries]
+# ✅ FIX: These are the correct libraries for your project.
+androidx-core = { group = "androidx.core", name = "core", version.ref = "core" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+# Testing Libraries
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitExt" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+firebase-inappmessaging = { group = "com.google.firebase", name = "firebase-inappmessaging", version.ref = "firebaseInappmessaging" }
+
+[plugins]
+# ✅ FIX: This now only defines the one plugin your project needs.
+android-application = { id = "com.android.application", version.ref = "agp" }

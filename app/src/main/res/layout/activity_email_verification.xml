@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F8FB"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="8dp"
+                android:src="@drawable/ic_back"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Back"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/ic_user"
+                android:layout_marginTop="24dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter Verification PIN"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A 6-digit PIN has been sent to your registered email."
+                android:textSize="14sp"
+                android:textColor="@color/text_gray"
+                android:gravity="center"
+                android:layout_marginTop="8dp"/>
+
+            <EditText
+                android:id="@+id/et_verification_pin"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Enter 6-digit PIN"
+                android:inputType="number"
+                android:maxLength="6"
+                android:layout_marginTop="24dp"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/btn_verify_pin"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Verify PIN"
+                android:textAllCaps="false"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Didn't receive the PIN?"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:id="@+id/tv_resend_pin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resend PIN"
+                android:textColor="@color/primary_blue"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

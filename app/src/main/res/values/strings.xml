@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">SANGATHAN APP</string>
+
+    <string name="profile_picture_desc">User\'s profile picture</string>
+    <string name="profile_name_placeholder">Rashmi Pandey</string>
+    <string name="profile_role_placeholder">Student</string>
+    <string name="profile_email_placeholder">Email: rashmi@example.com</string>
+    <string name="profile_course_placeholder">Course: B.Tech CSE</string>
+    <string name="profile_university_placeholder">University: Amity Jharkhand</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Username">Username</string>
+    <string name="password">Password</string>
+    <string name="login_as_student">LOGIN AS STUDENT</string>
+    <string name="Auj_sangathan">AUJ SANGATHAN</string>
+    <string name="login_to_your_account">Login to your account</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="admin">Admin</string>
+    <string name="student">Student</string>
+
+</resources>
