@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0A111E"
+    android:background="@color/bg_main"
     android:fillViewport="true">
 
     <LinearLayout
@@ -51,7 +51,7 @@
                 android:text="Enter Verification PIN"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text_main"
                 android:layout_marginTop="16dp"/>
 
             <TextView
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:text="A 6-digit PIN has been sent to your registered email."
                 android:textSize="14sp"
-                android:textColor="#8A9CB4"
+                android:textColor="@color/text_secondary"
                 android:gravity="center"
                 android:layout_marginTop="8dp"/>
 
@@ -72,7 +72,7 @@
                 android:maxLength="6"
                 android:layout_marginTop="24dp"
                 android:gravity="center"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text_main"
                 android:textColorHint="#8A9CB4"
                 android:background="@drawable/bg_input_dark"/>
 
@@ -90,7 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Didn't receive the PIN?"
-                android:textColor="#8A9CB4"
+                android:textColor="@color/text_secondary"
                 android:layout_marginTop="16dp"/>
 
             <TextView

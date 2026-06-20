@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="#0A111E">
+    android:background="@color/bg_main">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
         android:padding="16dp">
 
         <!-- ================= PROFILE HEADER ================= -->
-        <androidx.cardview.widget.CardView app:cardBackgroundColor="#131C2D"
+        <androidx.cardview.widget.CardView app:cardBackgroundColor="@color/bg_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="16dp"
@@ -55,7 +55,7 @@
 
                     <TextView
                         android:id="@+id/profile_name"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/text_main"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="User Name"
@@ -69,14 +69,14 @@
                         android:layout_height="wrap_content"
                         android:text="Student"
                         android:textSize="14sp"
-                        android:textColor="#8A9CB4" />
+                        android:textColor="@color/text_secondary" />
                 </LinearLayout>
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
         <!-- ================= USER INFO ================= -->
-        <androidx.cardview.widget.CardView app:cardBackgroundColor="#131C2D"
+        <androidx.cardview.widget.CardView app:cardBackgroundColor="@color/bg_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="16dp"
@@ -91,7 +91,7 @@
 
                 <TextView
                     android:id="@+id/profile_email"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/text_main"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Email: —"
@@ -100,7 +100,7 @@
 
                 <TextView
                     android:id="@+id/profile_phone"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/text_main"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Phone: —"
@@ -109,7 +109,7 @@
 
                 <TextView
                     android:id="@+id/profile_batch"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/text_main"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Batch: —"
@@ -118,7 +118,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
         <!-- ================= EMAIL VERIFICATION ================= -->
-        <androidx.cardview.widget.CardView app:cardBackgroundColor="#131C2D"
+        <androidx.cardview.widget.CardView app:cardBackgroundColor="@color/bg_card"
             android:id="@+id/card_email_verification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -135,7 +135,7 @@
 
                 <TextView
                     android:text="Email Verification"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/text_main"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:textSize="16sp"
@@ -194,7 +194,7 @@
         </LinearLayout>
 
         <!-- ================= SPORTS REGISTRATION ================= -->
-        <androidx.cardview.widget.CardView app:cardBackgroundColor="#131C2D"
+        <androidx.cardview.widget.CardView app:cardBackgroundColor="@color/bg_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="16dp"
@@ -212,7 +212,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sports Registrations"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/text_main"
                     android:textStyle="bold"
                     android:textSize="16sp"
                     android:layout_marginBottom="12dp" />
@@ -227,7 +227,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No sports registered yet"
-                    android:textColor="#8A9CB4"
+                    android:textColor="@color/text_secondary"
                     android:layout_marginTop="8dp" />
 
                 <Button
@@ -247,7 +247,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Achievements"
-            android:textColor="@android:color/white"
+            android:textColor="@color/text_main"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginBottom="8dp" />

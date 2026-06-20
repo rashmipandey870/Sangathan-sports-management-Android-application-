@@ -7,7 +7,7 @@
     android:layout_marginTop="12dp"
     app:cardCornerRadius="16dp"
     app:cardElevation="4dp"
-    app:cardBackgroundColor="#131C2D">
+    app:cardBackgroundColor="@color/bg_card">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,7 +46,7 @@
                 android:id="@+id/tv_achievement_subtitle"
                 android:text="Won by CSE Team • 2024"
                 android:textSize="12sp"
-                android:textColor="#8A9CB4"
+                android:textColor="@color/text_secondary"
                 android:layout_marginTop="4dp"/>
         </LinearLayout>
 

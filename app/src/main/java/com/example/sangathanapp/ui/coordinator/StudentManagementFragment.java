@@ -40,6 +40,8 @@ public class StudentManagementFragment extends Fragment {
 
         recyclerView = v.findViewById(R.id.recycler_students);
         spinnerTeam = v.findViewById(R.id.spinner_team);
+        TextView tvHeaderTitle = v.findViewById(R.id.tv_header_title);
+        TextView tvHeaderSubtitle = v.findViewById(R.id.tv_header_subtitle);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -52,6 +54,13 @@ public class StudentManagementFragment extends Fragment {
         String teamName = requireContext()
                 .getSharedPreferences("APP", 0)
                 .getString("TEAM_NAME", "");
+
+        if (tvHeaderTitle != null) {
+            tvHeaderTitle.setText("Player Selection");
+        }
+        if (tvHeaderSubtitle != null) {
+            tvHeaderSubtitle.setText("Draft players for " + teamName.replace("_", " "));
+        }
 
         // LOAD ONLY THIS TEAM
         loadTeamStudents(teamName);

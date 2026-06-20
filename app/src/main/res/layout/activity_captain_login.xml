@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0A111E">
+    android:background="@color/bg_main">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:text="SANGATHAN"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text_main"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:fontFamily="sans-serif-condensed-medium"
@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Captain Login"
-                android:textColor="#B5C7FF"
+                android:textColor="@color/text_secondary"
                 android:textSize="16sp"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="32dp" />
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="6dp"
-                app:cardBackgroundColor="#131C2D">
+                app:cardBackgroundColor="@color/bg_card">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -76,7 +76,7 @@
                             android:id="@+id/et_team_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="@android:color/white"
+                            android:textColor="@color/text_main"
                             android:textSize="15sp"
                             android:inputType="text"/>
                     </com.google.android.material.textfield.TextInputLayout>
@@ -100,7 +100,7 @@
                             android:id="@+id/et_pin_captain"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="@android:color/white"
+                            android:textColor="@color/text_main"
                             android:textSize="15sp"
                             android:inputType="number"/>
                     </com.google.android.material.textfield.TextInputLayout>

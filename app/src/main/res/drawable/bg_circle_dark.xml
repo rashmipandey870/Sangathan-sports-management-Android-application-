@@ -2,5 +2,5 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="oval">
 
-    <solid android:color="#1E1E1E" />  <!-- dark circle -->
+    <solid android:color="@color/bg_input" />
 </shape>

@@ -8,7 +8,7 @@
     app:cardCornerRadius="14dp"
     app:cardElevation="4dp"
     app:cardUseCompatPadding="true"
-    app:cardBackgroundColor="#131C2D">
+    app:cardBackgroundColor="@color/bg_card">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
 
         <TextView
             android:id="@+id/stat_value"
-            android:textColor="@android:color/white"
+            android:textColor="@color/text_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:text="Label"
             android:textSize="12sp"
-            android:textColor="#8A9CB4"
+            android:textColor="@color/text_secondary"
             android:layout_marginTop="4dp" />
 
     </LinearLayout>

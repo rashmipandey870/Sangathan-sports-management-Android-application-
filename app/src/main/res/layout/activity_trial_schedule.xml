@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0A111E">
+    android:background="@color/bg_main">
 
     <!-- Back Button -->
     <ImageView
@@ -37,7 +37,7 @@
             android:padding="16dp">
 
             <!-- Trial Card -->
-            <androidx.cardview.widget.CardView app:cardBackgroundColor="#131C2D"
+            <androidx.cardview.widget.CardView app:cardBackgroundColor="@color/bg_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -105,7 +105,7 @@
             </androidx.cardview.widget.CardView>
 
             <!-- Coordinator Info -->
-            <androidx.cardview.widget.CardView app:cardBackgroundColor="#131C2D"
+            <androidx.cardview.widget.CardView app:cardBackgroundColor="@color/bg_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"

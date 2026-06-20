@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#0A111E"
+    android:background="@color/bg_main"
     android:padding="16dp">
 
     <!-- Title Area -->
@@ -12,7 +12,7 @@
         android:text="Manage Sports &amp; Coordinators"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:textColor="@android:color/white"
+        android:textColor="@color/text_main"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginBottom="16dp"/>
@@ -44,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text_main"
                 android:text="2025"/>
         </com.google.android.material.textfield.TextInputLayout>
 

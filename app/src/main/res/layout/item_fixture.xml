@@ -7,7 +7,7 @@
     android:layout_margin="8dp"
     app:cardCornerRadius="16dp"
     app:cardElevation="6dp"
-    app:cardBackgroundColor="#131C2D">
+    app:cardBackgroundColor="@color/bg_card">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10-02-2026"
-                android:textColor="#B5C7FF"
+                android:textColor="@color/text_secondary"
                 android:textSize="12sp"
                 android:layout_marginStart="4dp" />
 
@@ -42,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="  •  "
-                android:textColor="#B5C7FF"
+                android:textColor="@color/text_secondary"
                 android:textSize="12sp" />
 
             <TextView
@@ -50,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10:00 AM"
-                android:textColor="#B5C7FF"
+                android:textColor="@color/text_secondary"
                 android:textSize="12sp" />
 
             <View
@@ -115,7 +115,7 @@
                 android:layout_toEndOf="@id/cb_teamA"
                 android:layout_centerVertical="true"
                 android:text="Team A"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text_main"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:layout_marginStart="8dp" />
@@ -182,7 +182,7 @@
                 android:layout_toEndOf="@id/cb_teamB"
                 android:layout_centerVertical="true"
                 android:text="Team B"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text_main"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:layout_marginStart="8dp" />
@@ -227,7 +227,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Select Winner:"
-                android:textColor="#8A9CB4"
+                android:textColor="@color/text_secondary"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 android:layout_marginEnd="8dp"/>

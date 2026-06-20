@@ -72,7 +72,48 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
         if (h.department != null) h.department.setText(s.getDepartment());
         if (h.team != null) h.team.setText(s.getTeamName());
         if (h.gender != null) h.gender.setText(s.getGender());
-        if (h.status != null) h.status.setText("Status: " + s.getStatus());
+        
+        String statusStr = s.getStatus() != null ? s.getStatus().toUpperCase() : "REGISTERED";
+        if (h.status != null) {
+            h.status.setText(statusStr);
+            if (statusStr.equals("SELECTED")) {
+                h.status.setTextColor(h.itemView.getContext().getResources().getColor(R.color.green));
+                h.status.setBackgroundColor(android.graphics.Color.parseColor("#1A5B925D"));
+            } else if (statusStr.equals("REJECTED")) {
+                h.status.setTextColor(h.itemView.getContext().getResources().getColor(R.color.red));
+                h.status.setBackgroundColor(android.graphics.Color.parseColor("#1AF62828"));
+            } else {
+                h.status.setTextColor(h.itemView.getContext().getResources().getColor(R.color.secondary_gold));
+                h.status.setBackgroundColor(android.graphics.Color.parseColor("#1AFFC107"));
+            }
+        }
+
+        // Set Initials Avatar globally
+        if (h.tvInitials != null && s.getStudentName() != null && !s.getStudentName().isEmpty()) {
+            String name = s.getStudentName().trim();
+            String initials = "";
+            String[] parts = name.split("\\s+");
+            if (parts.length > 0 && !parts[0].isEmpty()) {
+                initials += parts[0].substring(0, 1).toUpperCase();
+            }
+            if (parts.length > 1 && !parts[1].isEmpty()) {
+                initials += parts[1].substring(0, 1).toUpperCase();
+            }
+            h.tvInitials.setText(initials);
+        }
+
+        // Safe status indicator setup
+        if (h.statusIndicator != null) {
+            int colorRes;
+            if (statusStr.equals("SELECTED")) {
+                colorRes = h.itemView.getContext().getResources().getColor(R.color.green);
+            } else if (statusStr.equals("REJECTED")) {
+                colorRes = h.itemView.getContext().getResources().getColor(R.color.red);
+            } else {
+                colorRes = h.itemView.getContext().getResources().getColor(R.color.secondary_gold);
+            }
+            h.statusIndicator.setBackgroundColor(colorRes);
+        }
 
         StudentApiService api =
                 ApiClient.getClient().create(StudentApiService.class);
@@ -88,6 +129,8 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
 
             if (h.btnSelect != null)
                 h.btnSelect.setOnClickListener(v -> {
+                    int pos = h.getAdapterPosition();
+                    if (pos == RecyclerView.NO_POSITION) return;
                     api.selectPlayer(s.getId()).enqueue(new Callback<ApiResponse>() {
                         @Override
                         public void onResponse(Call<ApiResponse> call,
@@ -95,11 +138,9 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
 
                             if (response.isSuccessful()) {
                                 s.setStatus("SELECTED");
-                                if (h.status != null)
-                                    h.status.setText("Status: SELECTED");
-
                                 Toast.makeText(v.getContext(),
                                         "Selected", Toast.LENGTH_SHORT).show();
+                                notifyItemChanged(pos);
                             }
                         }
 
@@ -110,6 +151,8 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
 
             if (h.btnReject != null)
                 h.btnReject.setOnClickListener(v -> {
+                    int pos = h.getAdapterPosition();
+                    if (pos == RecyclerView.NO_POSITION) return;
                     api.rejectPlayer(s.getId()).enqueue(new Callback<ApiResponse>() {
                         @Override
                         public void onResponse(Call<ApiResponse> call,
@@ -117,11 +160,9 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
 
                             if (response.isSuccessful()) {
                                 s.setStatus("REJECTED");
-                                if (h.status != null)
-                                    h.status.setText("Status: REJECTED");
-
                                 Toast.makeText(v.getContext(),
                                         "Rejected", Toast.LENGTH_SHORT).show();
+                                notifyItemChanged(pos);
                             }
                         }
 
@@ -138,7 +179,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
                 h.btnEdit.setVisibility(View.VISIBLE);
 
                 h.btnEdit.setOnClickListener(v -> {
-                    showEditDialog(v, s, position);
+                    showEditDialog(v, s, h.getAdapterPosition());
                 });
             }
         }
@@ -147,20 +188,8 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
             if (h.btnEdit != null) {
                 h.btnEdit.setVisibility(View.VISIBLE);
                 h.btnEdit.setOnClickListener(v -> {
-                    showEditDialog(v, s, position);
+                    showEditDialog(v, s, h.getAdapterPosition());
                 });
-            }
-            if (h.tvInitials != null && s.getStudentName() != null && !s.getStudentName().isEmpty()) {
-                String name = s.getStudentName().trim();
-                String initials = "";
-                String[] parts = name.split("\\s+");
-                if (parts.length > 0 && !parts[0].isEmpty()) {
-                    initials += parts[0].substring(0, 1).toUpperCase();
-                }
-                if (parts.length > 1 && !parts[1].isEmpty()) {
-                    initials += parts[1].substring(0, 1).toUpperCase();
-                }
-                h.tvInitials.setText(initials);
             }
         }
     }
@@ -250,6 +279,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
 
         TextView name, department, team, gender, status, tvInitials;
         Button btnSelect, btnReject, btnEdit;
+        android.view.View statusIndicator;
 
         public ViewHolder(@NonNull View v) {
             super(v);
@@ -264,6 +294,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
             btnReject = v.findViewById(R.id.btn_reject);
             btnEdit = v.findViewById(R.id.btn_edit);
             tvInitials = v.findViewById(R.id.tv_student_initials);
+            statusIndicator = v.findViewById(R.id.status_indicator);
         }
     }
 }

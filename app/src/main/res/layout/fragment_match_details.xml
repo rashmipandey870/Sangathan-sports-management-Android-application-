@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0A111E"
+    android:background="@color/bg_main"
     android:fillViewport="true">
 
     <LinearLayout
@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Fixture Management"
-            android:textColor="@android:color/white"
+            android:textColor="@color/text_main"
             android:textSize="26sp"
             android:textStyle="bold"
             android:fontFamily="sans-serif-condensed-medium"
@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Create and track brackets for the tournament"
-            android:textColor="#8A9CB4"
+            android:textColor="@color/text_secondary"
             android:textSize="14sp"
             android:layout_marginBottom="20dp" />
 
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp"
-            app:cardBackgroundColor="#131C2D"
+            app:cardBackgroundColor="@color/bg_card"
             android:layout_marginBottom="20dp">
 
             <LinearLayout
@@ -75,7 +75,7 @@
                         android:gravity="center_vertical"
                         android:paddingStart="16dp"
                         android:paddingEnd="16dp"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/text_main"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:visibility="gone" />
@@ -195,7 +195,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Fixtures Brackets"
-            android:textColor="@android:color/white"
+            android:textColor="@color/text_main"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginBottom="12dp" />

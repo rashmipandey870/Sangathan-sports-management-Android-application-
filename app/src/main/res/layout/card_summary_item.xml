@@ -7,7 +7,7 @@
     android:layout_margin="8dp"
     app:cardCornerRadius="16dp"
     app:cardElevation="3dp"
-    app:cardBackgroundColor="#131C2D"
+    app:cardBackgroundColor="@color/bg_card"
     app:layout_constraintWidth_percent="0.33">
 
     <LinearLayout
@@ -33,7 +33,7 @@
             android:text="12"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#B5C7FF"
+            android:textColor="@color/text_secondary"
             android:layout_marginTop="8dp"/>
 
         <!-- LABEL -->
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:text="Total Events"
             android:textSize="12sp"
-            android:textColor="#8A9CB4"
+            android:textColor="@color/text_secondary"
             android:layout_marginTop="4dp"/>
 
     </LinearLayout>

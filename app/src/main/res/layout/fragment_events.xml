@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="#0A111E"
+    android:background="@color/bg_main"
     tools:context=".ui.events.EventsFragment">
 
     <!-- TITLE -->
@@ -16,7 +16,7 @@
         android:text="Upcoming Tournaments"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@android:color/white"
+        android:textColor="@color/text_main"
         android:fontFamily="sans-serif-condensed-medium"
         android:layout_marginBottom="4dp"/>
 
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:text="View schedules and fixtures across all categories"
         android:textSize="13sp"
-        android:textColor="#8A9CB4"
+        android:textColor="@color/text_secondary"
         android:layout_marginBottom="16dp"/>
 
     <!-- CONTROLS CARD -->
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
-        app:cardBackgroundColor="#131C2D"
+        app:cardBackgroundColor="@color/bg_card"
         android:layout_marginBottom="16dp">
 
         <LinearLayout
@@ -118,7 +118,7 @@
         android:text="Select Sport"
         android:textSize="14sp"
         android:textStyle="bold"
-        android:textColor="#8A9CB4"
+        android:textColor="@color/text_secondary"
         android:layout_marginBottom="8dp"/>
 
     <!-- SPORT ICONS -->

@@ -8,7 +8,7 @@
     android:layout_margin="8dp"
     app:cardCornerRadius="16dp"
     app:cardElevation="4dp"
-    app:cardBackgroundColor="#131C2D">
+    app:cardBackgroundColor="@color/bg_card">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
             android:text="Badminton"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="@android:color/white"
+            android:textColor="@color/text_main"
             android:layout_marginTop="8dp"/>
 
         <!-- REGISTERED INFO -->
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:text="Registered: 134/160"
             android:textSize="12sp"
-            android:textColor="#8A9CB4"
+            android:textColor="@color/text_secondary"
             android:layout_marginTop="4dp"/>
 
         <!-- PROGRESS -->

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0A111E"
+    android:background="@color/bg_main"
     android:fillViewport="true">
 
     <LinearLayout
@@ -19,7 +19,7 @@
             android:text="System Analytics"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="@android:color/white"
+            android:textColor="@color/text_main"
             android:layout_marginBottom="4dp"/>
 
         <TextView
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:text="Overview of campus engagement and leaderboard status"
             android:textSize="13sp"
-            android:textColor="#8A9CB4"
+            android:textColor="@color/text_secondary"
             android:layout_marginBottom="20dp"/>
 
         <!-- Stat Card: Total Users -->
@@ -36,7 +36,7 @@
             android:layout_height="100dp"
             app:cardCornerRadius="14dp"
             app:cardElevation="4dp"
-            app:cardBackgroundColor="#131C2D"
+            app:cardBackgroundColor="@color/bg_card"
             android:layout_marginBottom="24dp">
 
             <LinearLayout
@@ -50,7 +50,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Total Registered Users"
-                    android:textColor="#8A9CB4"
+                    android:textColor="@color/text_secondary"
                     android:textSize="12sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="6dp"/>
@@ -78,7 +78,7 @@
                 android:text="Tournament Standings"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@android:color/white"/>
+                android:textColor="@color/text_main"/>
 
             <TextView
                 android:id="@+id/tv_leaderboard_desc"
@@ -157,7 +157,7 @@
             android:layout_height="wrap_content"
             app:cardCornerRadius="16dp"
             app:cardElevation="6dp"
-            app:cardBackgroundColor="#131C2D"
+            app:cardBackgroundColor="@color/bg_card"
             android:layout_marginBottom="24dp">
 
             <LinearLayout
@@ -170,7 +170,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Visual Standings (Wins)"
-                    android:textColor="#8A9CB4"
+                    android:textColor="@color/text_secondary"
                     android:textSize="12sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="16dp"/>

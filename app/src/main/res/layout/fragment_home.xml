@@ -26,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="AUJ SANGATHAN"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text_main"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:fontFamily="sans-serif-condensed-medium"
@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sports Management System"
-                android:textColor="#8A9CB4"
+                android:textColor="@color/text_secondary"
                 android:textSize="14sp"
                 android:layout_marginBottom="12dp"/>
 
@@ -60,7 +60,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:hint="Search sports..."
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/text_main"
                     android:textColorHint="#8A9CB4"
                     android:background="@null"
                     android:paddingStart="20dp"
@@ -87,7 +87,7 @@
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp"
-                app:cardBackgroundColor="#131C2D"
+                app:cardBackgroundColor="@color/bg_card"
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?attr/selectableItemBackground">
@@ -117,7 +117,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Trial Information"
-                            android:textColor="@android:color/white"
+                            android:textColor="@color/text_main"
                             android:textSize="16sp"
                             android:textStyle="bold"/>
 
@@ -125,7 +125,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="View dates, venues and guidelines for sports trials"
-                            android:textColor="#8A9CB4"
+                            android:textColor="@color/text_secondary"
                             android:textSize="12sp"
                             android:layout_marginTop="2dp"/>
                     </LinearLayout>
@@ -147,7 +147,7 @@
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp"
-                app:cardBackgroundColor="#131C2D"
+                app:cardBackgroundColor="@color/bg_card"
                 android:visibility="gone">
 
                 <LinearLayout
@@ -160,7 +160,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="My Sport Registrations"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/text_main"
                         android:textSize="15sp"
                         android:textStyle="bold"
                         android:layout_marginBottom="10dp"/>
@@ -184,7 +184,7 @@
                 android:text="Sports Categories"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text_main"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="8dp" />
 
@@ -206,7 +206,7 @@
                 android:text="Student Achievements"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text_main"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="8dp" />
 

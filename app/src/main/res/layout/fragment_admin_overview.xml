@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0A111E"
+    android:background="@color/bg_main"
     android:padding="16dp"
     android:fillViewport="true">
 
@@ -16,7 +16,7 @@
             android:text="Head Admin Overview"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="@android:color/white"
+            android:textColor="@color/text_main"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_marginBottom="4dp"/>
@@ -24,7 +24,7 @@
         <TextView
             android:text="Real-time campus tournament stats"
             android:textSize="14sp"
-            android:textColor="#8A9CB4"
+            android:textColor="@color/text_secondary"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_marginBottom="24dp"/>
@@ -48,7 +48,7 @@
                 android:layout_margin="8dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                app:cardBackgroundColor="#131C2D">
+                app:cardBackgroundColor="@color/bg_card">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -59,7 +59,7 @@
 
                     <TextView
                         android:text="Total Sports"
-                        android:textColor="#8A9CB4"
+                        android:textColor="@color/text_secondary"
                         android:textSize="12sp"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
@@ -86,7 +86,7 @@
                 android:layout_margin="8dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                app:cardBackgroundColor="#131C2D">
+                app:cardBackgroundColor="@color/bg_card">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -97,7 +97,7 @@
 
                     <TextView
                         android:text="Total Teams"
-                        android:textColor="#8A9CB4"
+                        android:textColor="@color/text_secondary"
                         android:textSize="12sp"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
@@ -124,7 +124,7 @@
                 android:layout_margin="8dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                app:cardBackgroundColor="#131C2D">
+                app:cardBackgroundColor="@color/bg_card">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -135,7 +135,7 @@
 
                     <TextView
                         android:text="Registered Students"
-                        android:textColor="#8A9CB4"
+                        android:textColor="@color/text_secondary"
                         android:textSize="11sp"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
@@ -162,7 +162,7 @@
                 android:layout_margin="8dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp"
-                app:cardBackgroundColor="#131C2D">
+                app:cardBackgroundColor="@color/bg_card">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -173,7 +173,7 @@
 
                     <TextView
                         android:text="Total Matches"
-                        android:textColor="#8A9CB4"
+                        android:textColor="@color/text_secondary"
                         android:textSize="12sp"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"

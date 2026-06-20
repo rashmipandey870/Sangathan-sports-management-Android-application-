@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0A111E">
+    android:background="@color/bg_main">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             app:cardCornerRadius="16dp"
             app:cardElevation="6dp"
-            app:cardBackgroundColor="#131C2D">
+            app:cardBackgroundColor="@color/bg_card">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -81,7 +81,7 @@
                         android:id="@+id/input_trial_date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@android:color/white"/>
+                        android:textColor="@color/text_main"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- TRIAL TIME -->
@@ -103,7 +103,7 @@
                         android:id="@+id/input_trial_time"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@android:color/white"/>
+                        android:textColor="@color/text_main"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- VENUE -->
@@ -125,7 +125,7 @@
                         android:id="@+id/input_trial_venue"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@android:color/white"/>
+                        android:textColor="@color/text_main"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- SAVE BUTTON -->

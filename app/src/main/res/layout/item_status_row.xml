@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="BCA BOYS CRICKET"
-            android:textColor="@android:color/white"
+            android:textColor="@color/text_main"
             android:textSize="15sp"
             android:textStyle="bold"
             android:layout_alignParentStart="true"
@@ -61,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tap to view selection trial schedule"
-            android:textColor="#8A9CB4"
+            android:textColor="@color/text_secondary"
             android:textSize="11sp"
             android:layout_marginStart="6dp" />
     </LinearLayout>

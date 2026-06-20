@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#0A111E">
+    android:background="@color/bg_main">
 
     <!-- HEADER -->
     <LinearLayout
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="16dp"
-        android:background="#1E293B">
+        android:background="@color/primary_blue">
 
         <TextView
             android:id="@+id/tv_team_title"
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="12dp"
-        android:background="#E2E8F0">
+        android:background="@color/chip_bg">
 
         <TextView
             android:id="@+id/tv_selected_count"
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:text="Selected: 0"
             android:textStyle="bold"
-            android:textColor="@android:color/white"
+            android:textColor="@color/text_main"
             android:textSize="14sp"/>
 
     </LinearLayout>

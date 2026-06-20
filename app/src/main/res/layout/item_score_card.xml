@@ -7,7 +7,7 @@
     android:layout_marginHorizontal="6dp"
     app:cardCornerRadius="16dp"
     app:cardElevation="4dp"
-    app:cardBackgroundColor="#131C2D">
+    app:cardBackgroundColor="@color/bg_card">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -51,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CSE-BOYS vs IT-BOYS"
-            android:textColor="@android:color/white"
+            android:textColor="@color/text_main"
             android:textSize="16sp"
             android:textStyle="bold"
             android:layout_marginTop="8dp" />
@@ -79,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Winner: CSE-BOYS"
-                android:textColor="#B5C7FF"
+                android:textColor="@color/text_secondary"
                 android:textSize="13sp"
                 android:textStyle="bold"
                 android:layout_marginStart="8dp" />
@@ -100,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Date: 25 Jan | 10:00 AM"
-                android:textColor="#8A9CB4"
+                android:textColor="@color/text_secondary"
                 android:textSize="12sp" />
 
             <!-- Venue -->
@@ -110,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Venue: Ground A"
-                android:textColor="#8A9CB4"
+                android:textColor="@color/text_secondary"
                 android:textSize="12sp"
                 android:gravity="end" />
         </LinearLayout>

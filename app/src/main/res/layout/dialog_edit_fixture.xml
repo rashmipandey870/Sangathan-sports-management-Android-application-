@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="#131C2D"
+    android:background="@color/bg_card"
     android:padding="20dp">
 
     <TextView
@@ -12,7 +12,7 @@
         android:text="Edit Match Details"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@android:color/white"
+        android:textColor="@color/text_main"
         android:layout_marginBottom="16dp"/>
 
     <!-- Match Date -->
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:text="Match Date"
         android:textSize="12sp"
-        android:textColor="#8A9CB4"
+        android:textColor="@color/text_secondary"
         android:layout_marginBottom="4dp"/>
 
     <EditText
@@ -31,7 +31,7 @@
         android:hint="e.g. 20 Jan 2025"
         android:background="@drawable/bg_input_dark"
         android:padding="12dp"
-        android:textColor="@android:color/white"
+        android:textColor="@color/text_main"
         android:textColorHint="#8A9CB4"
         android:layout_marginBottom="12dp"
         android:inputType="text"/>
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:text="Match Time"
         android:textSize="12sp"
-        android:textColor="#8A9CB4"
+        android:textColor="@color/text_secondary"
         android:layout_marginBottom="4dp"/>
 
     <EditText
@@ -52,7 +52,7 @@
         android:hint="e.g. 10:00 AM"
         android:background="@drawable/bg_input_dark"
         android:padding="12dp"
-        android:textColor="@android:color/white"
+        android:textColor="@color/text_main"
         android:textColorHint="#8A9CB4"
         android:layout_marginBottom="12dp"
         android:inputType="text"/>
@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:text="Venue"
         android:textSize="12sp"
-        android:textColor="#8A9CB4"
+        android:textColor="@color/text_secondary"
         android:layout_marginBottom="4dp"/>
 
     <EditText
@@ -73,7 +73,7 @@
         android:hint="e.g. Main Ground"
         android:background="@drawable/bg_input_dark"
         android:padding="12dp"
-        android:textColor="@android:color/white"
+        android:textColor="@color/text_main"
         android:textColorHint="#8A9CB4"
         android:layout_marginBottom="12dp"
         android:inputType="text"/>
@@ -98,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:text="Score Team A"
                 android:textSize="12sp"
-                android:textColor="#8A9CB4"
+                android:textColor="@color/text_secondary"
                 android:layout_marginBottom="4dp"/>
 
             <EditText
@@ -108,7 +108,7 @@
                 android:hint="e.g. 10"
                 android:background="@drawable/bg_input_dark"
                 android:padding="12dp"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text_main"
                 android:textColorHint="#8A9CB4"
                 android:inputType="text"/>
         </LinearLayout>
@@ -125,7 +125,7 @@
                 android:layout_height="wrap_content"
                 android:text="Score Team B"
                 android:textSize="12sp"
-                android:textColor="#8A9CB4"
+                android:textColor="@color/text_secondary"
                 android:layout_marginBottom="4dp"/>
 
             <EditText
@@ -135,7 +135,7 @@
                 android:hint="e.g. 8"
                 android:background="@drawable/bg_input_dark"
                 android:padding="12dp"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text_main"
                 android:textColorHint="#8A9CB4"
                 android:inputType="text"/>
         </LinearLayout>

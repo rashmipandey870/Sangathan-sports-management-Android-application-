@@ -7,7 +7,7 @@
     android:layout_marginVertical="6dp"
     app:cardCornerRadius="12dp"
     app:cardElevation="4dp"
-    app:cardBackgroundColor="#131C2D">
+    app:cardBackgroundColor="@color/bg_card">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Student Name"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text_main"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_alignParentStart="true"
@@ -51,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Department"
-            android:textColor="#8A9CB4"
+            android:textColor="@color/text_secondary"
             android:textSize="13sp"
             android:layout_marginBottom="6dp"/>
 
