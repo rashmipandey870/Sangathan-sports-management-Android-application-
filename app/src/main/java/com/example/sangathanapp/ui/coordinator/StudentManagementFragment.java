@@ -56,6 +56,20 @@ public class StudentManagementFragment extends Fragment {
         // LOAD ONLY THIS TEAM
         loadTeamStudents(teamName);
 
+        View btnLogout = v.findViewById(R.id.btn_logout);
+        if (btnLogout != null) {
+            btnLogout.setOnClickListener(view -> {
+                // Clear login preferences
+                android.content.SharedPreferences sp = requireContext().getSharedPreferences("APP", android.content.Context.MODE_PRIVATE);
+                sp.edit().clear().apply();
+
+                // Navigate to RoleSelectionActivity
+                android.content.Intent intent = new android.content.Intent(requireContext(), com.example.sangathanapp.ui.RoleSelectionActivity.class);
+                intent.setFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK | android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            });
+        }
+
         return v;
     }
     // ================= TEAM DROPDOWN =================
@@ -111,7 +125,7 @@ public class StudentManagementFragment extends Fragment {
                         if (response.isSuccessful()
                                 && response.body() != null) {
 
-                            adapter = new StudentAdapter(response.body(),"COORDINATOR");
+                            adapter = new StudentAdapter(response.body(), "CAPTAIN");
                             recyclerView.setAdapter(adapter);
 
                         } else {

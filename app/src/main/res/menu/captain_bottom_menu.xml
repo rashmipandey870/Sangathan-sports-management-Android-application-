@@ -2,8 +2,8 @@
 
     <item
         android:id="@+id/nav_captain_matches"
-        android:title="Matches"
-        android:icon="@drawable/ic_event"/>
+        android:title="Selection"
+        android:icon="@drawable/ic_students"/>
 
     <item
         android:id="@+id/nav_captain_events"
@@ -13,7 +13,7 @@
     <item
         android:id="@+id/nav_captain_team"
         android:title="Team"
-        android:icon="@drawable/ic_add_team"/>
+        android:icon="@drawable/ic_team"/>
     <item
         android:id="@+id/nav_captain_score"
         android:title="Score"
@@ -21,7 +21,7 @@
 
     <item
         android:id="@+id/nav_captain_profile"
-        android:title="Profile"
-        android:icon="@drawable/ic_user"/>
+        android:title="Trials"
+        android:icon="@drawable/ic_trials"/>
 
 </menu>

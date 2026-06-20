@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F8FAFC">
+    android:background="#0A111E">
 
     <FrameLayout
         android:id="@+id/captain_fragment_container1"
@@ -15,9 +15,10 @@
         android:id="@+id/captain_bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        app:itemIconTint="#1E293B"
-        app:itemTextColor="#1E293B"
+        android:background="#131C2D"
+        app:itemIconTint="@color/nav_item_tint"
+        app:itemTextColor="@color/nav_item_tint"
+        app:itemActiveIndicatorStyle="@null"
         app:menu="@menu/captain_bottom_menu"/>
 
 </LinearLayout>

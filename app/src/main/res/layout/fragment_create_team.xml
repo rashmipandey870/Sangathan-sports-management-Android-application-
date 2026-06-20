@@ -1,54 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7FB"
-    android:padding="20dp">
+    android:background="@color/bg_main">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <!-- TITLE -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Create Team"
-            android:textSize="26sp"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#1E293B"
-            android:layout_marginBottom="6dp"/>
+            android:textColor="@color/primary_blue"
+            android:layout_marginBottom="16dp"/>
 
-        <!-- SUBTITLE -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Create team and generate captain PIN"
-            android:textColor="#64748B"
-            android:textSize="14sp"
-            android:layout_marginBottom="20dp"/>
-
-        <!-- CARD -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="14dp"
-            app:cardElevation="4dp"
-            android:padding="16dp">
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/bg_card">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <!-- SPORT -->
+                <TextView
+                    android:id="@+id/tv_sport_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Sport"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="6dp"/>
                 <Spinner
                     android:id="@+id/sp_sport"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:background="@drawable/bg_input_light"
+                    android:background="@drawable/bg_input_dark"
+                    android:layout_marginBottom="12dp"/>
+                <TextView
+                    android:id="@+id/tv_fixed_sport"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:background="@drawable/bg_input_dark"
+                    android:padding="14dp"
+                    android:textColor="@color/text_main"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
                     android:layout_marginBottom="12dp"/>
 
                 <!-- TEAM NAME -->
@@ -57,8 +67,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
                     android:hint="Team Name (e.g. BBA BOYS CRICKET)"
-                    android:background="@drawable/bg_input_light"
-                    android:padding="14dp"/>
+                    android:background="@drawable/bg_input_dark"
+                    android:padding="14dp"
+                    android:textColor="@color/text_main"
+                    android:textColorHint="@color/text_secondary"
+                    android:layout_marginBottom="12dp"/>
 
                 <!-- CAPTAIN NAME -->
                 <EditText
@@ -66,9 +79,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
                     android:hint="Captain Name"
-                    android:background="@drawable/bg_input_light"
+                    android:background="@drawable/bg_input_dark"
                     android:padding="14dp"
-                    android:layout_marginTop="12dp"/>
+                    android:textColor="@color/text_main"
+                    android:textColorHint="@color/text_secondary"
+                    android:layout_marginBottom="12dp"/>
 
                 <!-- ENROLLMENT -->
                 <EditText
@@ -76,27 +91,41 @@
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
                     android:hint="Captain Enrollment No."
-                    android:background="@drawable/bg_input_light"
+                    android:background="@drawable/bg_input_dark"
                     android:padding="14dp"
-                    android:layout_marginTop="12dp"/>
+                    android:textColor="@color/text_main"
+                    android:textColorHint="@color/text_secondary"
+                    android:layout_marginBottom="12dp"/>
 
                 <!-- DEPARTMENT -->
-                <EditText
-                    android:id="@+id/et_captain_department"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Department"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="6dp"/>
+                <Spinner
+                    android:id="@+id/sp_captain_department"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:hint="Department (e.g. BBA, CSE)"
-                    android:background="@drawable/bg_input_light"
-                    android:padding="14dp"
-                    android:layout_marginTop="12dp"/>
+                    android:background="@drawable/bg_input_dark"
+                    android:layout_marginBottom="12dp"/>
 
                 <!-- GENDER -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Gender"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="6dp"/>
                 <Spinner
                     android:id="@+id/sp_gender"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/bg_input_light"/>
+                    android:background="@drawable/bg_input_dark"
+                    android:layout_marginBottom="16dp"/>
 
                 <!-- BUTTON -->
                 <Button
@@ -106,8 +135,8 @@
                     android:text="Create Team"
                     android:textColor="@android:color/white"
                     android:textStyle="bold"
-                    android:background="@drawable/btn_primary"
-                    android:layout_marginTop="18dp"/>
+                    android:background="@drawable/gradient_btn_blue"
+                    app:backgroundTint="@null"/>
 
                 <!-- PIN OUTPUT -->
                 <TextView

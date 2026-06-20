@@ -11,10 +11,7 @@
         android:title="Coordinators"
         android:icon="@drawable/ic_user"/>
 
-    <item
-        android:id="@+id/nav_captains"
-        android:title="Captains"
-        android:icon="@drawable/ic_add_team"/>
+
 
     <item
         android:id="@+id/nav_analytics"

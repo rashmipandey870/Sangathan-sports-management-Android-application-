@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingVertical="12dp"
+    android:paddingHorizontal="8dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Team/Sport Name -->
+        <TextView
+            android:id="@+id/tv_status_team_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BCA BOYS CRICKET"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/tv_status_badge"
+            android:layout_marginEnd="12dp" />
+
+        <!-- Status Badge Text -->
+        <TextView
+            android:id="@+id/tv_status_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REGISTERED"
+            android:textColor="#FFD700"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="#1AFFD700"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"/>
+    </RelativeLayout>
+
+    <!-- Click Hint Subtext -->
+    <LinearLayout
+        android:id="@+id/layout_click_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="6dp">
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/ic_calendar"
+            android:contentDescription="Calendar" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tap to view selection trial schedule"
+            android:textColor="#8A9CB4"
+            android:textSize="11sp"
+            android:layout_marginStart="6dp" />
+    </LinearLayout>
+
+    <!-- Divider line -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1E2A44"
+        android:layout_marginTop="12dp"/>
+
+</LinearLayout>

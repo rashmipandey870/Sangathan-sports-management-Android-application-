@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="8dp"
+    android:layout_marginHorizontal="6dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="#131C2D">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Sport name and Round -->
+            <TextView
+                android:id="@+id/tv_score_sport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CRICKET - ROUND 1"
+                android:textColor="#FFD700"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_alignParentStart="true" />
+
+            <!-- Match Status (Finished / Scheduled) -->
+            <TextView
+                android:id="@+id/tv_score_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FINISHED"
+                android:textColor="#5B925D"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_alignParentEnd="true"
+                android:background="#1A5B925D"
+                android:paddingHorizontal="6dp"
+                android:paddingVertical="2dp" />
+        </RelativeLayout>
+
+        <!-- Teams row -->
+        <TextView
+            android:id="@+id/tv_score_teams"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CSE-BOYS vs IT-BOYS"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp" />
+
+        <!-- Winner Box (if finished) -->
+        <LinearLayout
+            android:id="@+id/layout_score_winner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="#1A1E88E5"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_trophy"
+                android:contentDescription="Trophy" />
+
+            <TextView
+                android:id="@+id/tv_score_winner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Winner: CSE-BOYS"
+                android:textColor="#B5C7FF"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Details Row (Date & Venue) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:weightSum="2">
+
+            <!-- Date/Time -->
+            <TextView
+                android:id="@+id/tv_score_datetime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Date: 25 Jan | 10:00 AM"
+                android:textColor="#8A9CB4"
+                android:textSize="12sp" />
+
+            <!-- Venue -->
+            <TextView
+                android:id="@+id/tv_score_venue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Venue: Ground A"
+                android:textColor="#8A9CB4"
+                android:textSize="12sp"
+                android:gravity="end" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -38,15 +38,17 @@ public class CaptainTrialFragment extends Fragment {
         etVenue = v.findViewById(R.id.et_venue);
         etInstruction = v.findViewById(R.id.et_instruction);
         btnCreate = v.findViewById(R.id.btn_create_trial);
-
-
+        TextView tvTeamHeader = v.findViewById(R.id.tv_captain_team_header);
 
         //  GET TEAM ID
         teamId = requireContext()
                 .getSharedPreferences("APP", 0)
                 .getString("TEAM_ID", "NOT_FOUND");
 
-        teamName=requireContext().getSharedPreferences("APP",0).getString("TEAM_NAME","");
+        teamName = requireContext().getSharedPreferences("APP", 0).getString("TEAM_NAME", "");
+        if (teamName != null && !teamName.isEmpty()) {
+            tvTeamHeader.setText("Team: " + teamName.toUpperCase());
+        }
 
 
         Log.d("TRIAL_DEBUG", "TEAM_ID FROM PREF: " + teamId);

@@ -32,6 +32,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
     public int getItemViewType(int position) {
         if (role.equals("CAPTAIN")) return 1;
         else if (role.equals("COORDINATOR")) return 2;
+        else if (role.equals("CAPTAIN_TEAM")) return 4;
         else return 3;
     }
 
@@ -48,6 +49,10 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
         } else if (viewType == 2) {
             view = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.item_student_management, parent, false);
+
+        } else if (viewType == 4) {
+            view = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_captain_team_member, parent, false);
 
         } else {
             view = LayoutInflater.from(parent.getContext())
@@ -137,6 +142,27 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
                 });
             }
         }
+        // ================= CAPTAIN_TEAM =================
+        else if (role.equals("CAPTAIN_TEAM")) {
+            if (h.btnEdit != null) {
+                h.btnEdit.setVisibility(View.VISIBLE);
+                h.btnEdit.setOnClickListener(v -> {
+                    showEditDialog(v, s, position);
+                });
+            }
+            if (h.tvInitials != null && s.getStudentName() != null && !s.getStudentName().isEmpty()) {
+                String name = s.getStudentName().trim();
+                String initials = "";
+                String[] parts = name.split("\\s+");
+                if (parts.length > 0 && !parts[0].isEmpty()) {
+                    initials += parts[0].substring(0, 1).toUpperCase();
+                }
+                if (parts.length > 1 && !parts[1].isEmpty()) {
+                    initials += parts[1].substring(0, 1).toUpperCase();
+                }
+                h.tvInitials.setText(initials);
+            }
+        }
     }
 
     @Override
@@ -222,7 +248,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
     // ================= VIEW HOLDER =================
     static class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView name, department, team, gender, status;
+        TextView name, department, team, gender, status, tvInitials;
         Button btnSelect, btnReject, btnEdit;
 
         public ViewHolder(@NonNull View v) {
@@ -237,6 +263,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
             btnSelect = v.findViewById(R.id.btn_select);
             btnReject = v.findViewById(R.id.btn_reject);
             btnEdit = v.findViewById(R.id.btn_edit);
+            tvInitials = v.findViewById(R.id.tv_student_initials);
         }
     }
 }

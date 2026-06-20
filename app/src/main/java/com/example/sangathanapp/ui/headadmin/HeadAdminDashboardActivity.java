@@ -12,6 +12,7 @@ public class HeadAdminDashboardActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        com.example.sangathanapp.ui.ThemeHelper.applyTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_head_admin_dashboard);
 
@@ -27,8 +28,7 @@ public class HeadAdminDashboardActivity extends AppCompatActivity {
                 selected = new AdminOverviewFragment();
             } else if (item.getItemId() == R.id.nav_coordinators) {
                 selected = new ManageCoordinatorsFragment();
-            } else if (item.getItemId() == R.id.nav_captains) {
-                selected = new ManageCaptainsFragment();
+
             } else if (item.getItemId() == R.id.nav_analytics) {
                 selected = new SystemAnalyticsFragment();
             }

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="#131C2D"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal">
+
+        <!-- SPORT INITIALS BADGE or ICON -->
+        <FrameLayout
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:id="@+id/img_sport_icon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_default"
+                android:scaleType="fitCenter"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tv_sport_initial"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"/>
+        </FrameLayout>
+
+        <!-- TITLE -->
+        <TextView
+            android:id="@+id/tv_sport_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sport Name"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="8dp"/>
+
+        <!-- REGISTERED -->
+        <TextView
+            android:id="@+id/tv_sport_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registered: 0/200"
+            android:textSize="12sp"
+            android:textColor="#8A9CB4"
+            android:layout_marginTop="4dp"
+            android:visibility="gone"/>
+
+        <!-- PROGRESS -->
+        <ProgressBar
+            android:id="@+id/progress_sport_registered"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:layout_marginTop="8dp"
+            android:max="200"
+            android:progress="0"
+            android:progressTint="#1E88E5"
+            android:backgroundTint="#1E2A44"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

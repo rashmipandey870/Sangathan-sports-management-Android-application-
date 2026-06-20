@@ -1,4 +1,4 @@
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView app:cardBackgroundColor="#131C2D" xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -26,7 +26,7 @@
             android:id="@+id/tv_date_time"
             android:text="2025-01-15 • 10:00 AM"
             android:textSize="14sp"
-            android:textColor="@color/text_gray"
+            android:textColor="#8A9CB4"
             android:layout_marginTop="4dp"/>
 
         <TextView
@@ -35,7 +35,7 @@
             android:id="@+id/tv_venue"
             android:text="Venue: Ground A"
             android:textSize="14sp"
-            android:textColor="@color/text_gray"
+            android:textColor="#8A9CB4"
             android:layout_marginTop="2dp"/>
 
         <Button

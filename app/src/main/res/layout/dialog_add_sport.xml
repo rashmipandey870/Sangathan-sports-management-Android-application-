@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#131C2D">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Sport Name -->
+        <EditText
+            android:id="@+id/et_dialog_sport_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Sport Name (e.g. CRICKET)"
+            android:background="@drawable/bg_input_dark"
+            android:padding="12dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="#8A9CB4"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Description -->
+        <EditText
+            android:id="@+id/et_dialog_sport_desc"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:hint="Description"
+            android:gravity="top|start"
+            android:background="@drawable/bg_input_dark"
+            android:padding="12dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="#8A9CB4"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Date -->
+        <EditText
+            android:id="@+id/et_dialog_sport_date"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Date (e.g. 20 Jan 2025)"
+            android:background="@drawable/bg_input_dark"
+            android:padding="12dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="#8A9CB4"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Venue -->
+        <EditText
+            android:id="@+id/et_dialog_sport_venue"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Venue (e.g. Main Ground)"
+            android:background="@drawable/bg_input_dark"
+            android:padding="12dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="#8A9CB4"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Level -->
+        <EditText
+            android:id="@+id/et_dialog_sport_level"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Level (e.g. Department Level)"
+            android:background="@drawable/bg_input_dark"
+            android:padding="12dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="#8A9CB4"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Year -->
+        <EditText
+            android:id="@+id/et_dialog_sport_year"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Year (e.g. 2025)"
+            android:inputType="number"
+            android:background="@drawable/bg_input_dark"
+            android:padding="12dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="#8A9CB4"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Max Participants -->
+        <EditText
+            android:id="@+id/et_dialog_sport_max"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Max Participants (default 200)"
+            android:inputType="number"
+            android:background="@drawable/bg_input_dark"
+            android:padding="12dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="#8A9CB4"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Icon Spinner/Input -->
+        <EditText
+            android:id="@+id/et_dialog_sport_icon"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Icon Name (e.g. ic_cricket, ic_football)"
+            android:background="@drawable/bg_input_dark"
+            android:padding="12dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="#8A9CB4"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

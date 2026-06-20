@@ -8,18 +8,15 @@
 
     <item
         android:id="@+id/nav_admin_dashboard"
-        android:icon="@drawable/ic_students"
-        android:title="Dashboard" />
+        android:icon="@drawable/ic_team"
+        android:title="Teams" />
 
     <item
         android:id="@+id/nav_admin_fixtures"
         android:icon="@drawable/ic_fixtures"
         android:title="Fixtures" />
 
-    <item
-        android:id="@+id/nav_admin_trials"
-        android:icon="@drawable/ic_trials"
-        android:title="Trials" />
+
 
     <item
         android:id="@+id/nav_admin_profile"

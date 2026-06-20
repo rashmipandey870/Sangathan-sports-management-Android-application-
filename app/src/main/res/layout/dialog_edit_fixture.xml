@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#131C2D"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Match Details"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Match Date -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Match Date"
+        android:textSize="12sp"
+        android:textColor="#8A9CB4"
+        android:layout_marginBottom="4dp"/>
+
+    <EditText
+        android:id="@+id/et_dialog_match_date"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="e.g. 20 Jan 2025"
+        android:background="@drawable/bg_input_dark"
+        android:padding="12dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="#8A9CB4"
+        android:layout_marginBottom="12dp"
+        android:inputType="text"/>
+
+    <!-- Match Time -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Match Time"
+        android:textSize="12sp"
+        android:textColor="#8A9CB4"
+        android:layout_marginBottom="4dp"/>
+
+    <EditText
+        android:id="@+id/et_dialog_match_time"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="e.g. 10:00 AM"
+        android:background="@drawable/bg_input_dark"
+        android:padding="12dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="#8A9CB4"
+        android:layout_marginBottom="12dp"
+        android:inputType="text"/>
+
+    <!-- Match Venue -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Venue"
+        android:textSize="12sp"
+        android:textColor="#8A9CB4"
+        android:layout_marginBottom="4dp"/>
+
+    <EditText
+        android:id="@+id/et_dialog_match_venue"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="e.g. Main Ground"
+        android:background="@drawable/bg_input_dark"
+        android:padding="12dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="#8A9CB4"
+        android:layout_marginBottom="12dp"
+        android:inputType="text"/>
+
+    <!-- Scores Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginEnd="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Score Team A"
+                android:textSize="12sp"
+                android:textColor="#8A9CB4"
+                android:layout_marginBottom="4dp"/>
+
+            <EditText
+                android:id="@+id/et_dialog_score_a"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="e.g. 10"
+                android:background="@drawable/bg_input_dark"
+                android:padding="12dp"
+                android:textColor="@android:color/white"
+                android:textColorHint="#8A9CB4"
+                android:inputType="text"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Score Team B"
+                android:textSize="12sp"
+                android:textColor="#8A9CB4"
+                android:layout_marginBottom="4dp"/>
+
+            <EditText
+                android:id="@+id/et_dialog_score_b"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="e.g. 8"
+                android:background="@drawable/bg_input_dark"
+                android:padding="12dp"
+                android:textColor="@android:color/white"
+                android:textColorHint="#8A9CB4"
+                android:inputType="text"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

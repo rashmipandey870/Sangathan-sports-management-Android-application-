@@ -20,14 +20,8 @@ public interface StudentRegistrationApi {
             @Body StudentRegistrationModel model
     );
 
-    @POST("selection/update")
-    Call<ApiResponse> updateSelection(@Body SelectionRequest request);
-
-    @GET("team/students/{teamName}")
-    Call<List<StudentRegistrationModel>> getTeamStudents();
-
-    @PUT("select-player/{id}")
-    Call<ApiResponse> selectPlayer(@Path("id") String id);
-
-
+    @GET("student/status/{identifier}")
+    Call<List<StudentRegistrationModel>> getStudentStatus(
+            @Path("identifier") String identifier
+    );
 }

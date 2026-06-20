@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Registration Details"
+        android:textColor="#0F172A"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginBottom="12dp"/>
@@ -18,12 +19,22 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Full Name">
+        android:hint="Full Name"
+        android:textColorHint="#64748B"
+        app:hintTextColor="#0A3464"
+        app:boxStrokeColor="#E2E8F0"
+        app:boxBackgroundColor="#FFFFFF"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/student_name_input"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textColor="#0F172A"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- ENROLLMENT -->
@@ -31,12 +42,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enrollment No"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:textColorHint="#64748B"
+        app:hintTextColor="#0A3464"
+        app:boxStrokeColor="#E2E8F0"
+        app:boxBackgroundColor="#FFFFFF"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/enrollment_no_input"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textColor="#0F172A"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- DEPARTMENT -->
@@ -45,12 +66,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Department"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:textColorHint="#64748B"
+        app:hintTextColor="#0A3464"
+        app:boxStrokeColor="#E2E8F0"
+        app:boxBackgroundColor="#FFFFFF"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp">
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:id="@+id/department_dropdown"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textColor="#0F172A"
+            android:inputType="none"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- GENDER -->
@@ -59,12 +91,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Gender"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:textColorHint="#64748B"
+        app:hintTextColor="#0A3464"
+        app:boxStrokeColor="#E2E8F0"
+        app:boxBackgroundColor="#FFFFFF"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp">
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:id="@+id/gender_dropdown"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textColor="#0F172A"
+            android:inputType="none"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- TEAM -->
@@ -73,12 +116,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Select Team"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:textColorHint="#64748B"
+        app:hintTextColor="#0A3464"
+        app:boxStrokeColor="#E2E8F0"
+        app:boxBackgroundColor="#FFFFFF"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp">
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:id="@+id/team_dropdown"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textColor="#0F172A"
+            android:inputType="none"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- EMAIL -->
@@ -86,12 +140,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:textColorHint="#64748B"
+        app:hintTextColor="#0A3464"
+        app:boxStrokeColor="#E2E8F0"
+        app:boxBackgroundColor="#FFFFFF"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email_input"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textColor="#0F172A"
+            android:inputType="textEmailAddress"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- PHONE -->
@@ -99,12 +164,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Phone"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:textColorHint="#64748B"
+        app:hintTextColor="#0A3464"
+        app:boxStrokeColor="#E2E8F0"
+        app:boxBackgroundColor="#FFFFFF"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/phone_input"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textColor="#0F172A"
+            android:inputType="phone"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>

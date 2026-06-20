@@ -13,6 +13,7 @@ public class CoordinatorDashboardActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        com.example.sangathanapp.ui.ThemeHelper.applyTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coordinator_dashboard);
 
@@ -31,8 +32,7 @@ public class CoordinatorDashboardActivity extends AppCompatActivity {
                 selected = new TeamListFragment();
             } else if (item.getItemId() == R.id.nav_admin_fixtures) {
                 selected = new MatchDetailsFragment();
-            } else if (item.getItemId() == R.id.nav_admin_trials) {
-                selected = new EventsFragment();
+
             } else if (item.getItemId() == R.id.nav_admin_profile) {
                 selected = new CoordinatorProfileFragment();
             }

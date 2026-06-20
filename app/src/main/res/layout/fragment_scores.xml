@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,20 +13,94 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <!-- TITLE -->
         <TextView
-            android:text="Live Scores"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Leaderboard"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="@color/primary_blue"
+            android:textColor="@color/text_main"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current department standings and wins breakdown"
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary"
             android:layout_marginBottom="16dp"/>
 
-        <androidx.cardview.widget.CardView
+        <!-- Sport Filter Spinner -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SPORT CATEGORY"
+                android:textColor="@color/primary_blue"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"/>
+
+            <Spinner
+                android:id="@+id/sp_leaderboard_sport"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_spinner" />
+        </LinearLayout>
+
+        <!-- Gender Filter Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp"
+            android:weightSum="2">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_leaderboard_boys"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="Boys"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:layout_marginEnd="6dp"
+                android:backgroundTint="#1E88E5"
+                app:cornerRadius="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_leaderboard_girls"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="Girls"
+                android:textColor="@color/text_secondary"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:layout_marginStart="6dp"
+                android:backgroundTint="@color/bg_card"
+                app:cornerRadius="8dp" />
+        </LinearLayout>
+
+        <!-- Leaderboard Chart Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_leaderboard_chart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/bg_card"
+            android:layout_marginBottom="24dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -32,23 +109,30 @@
                 android:padding="16dp">
 
                 <TextView
-                    android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="BBA vs MBA – Cricket"
-                    android:textStyle="bold"/>
-
-                <TextView
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:text="BBA: 156/4"/>
+                    android:text="Visual Standings (Wins)"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp"/>
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/layout_chart_container"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:text="MBA: Yet to bat"/>
-
+                    android:orientation="vertical" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
+        <!-- Leaderboard List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_leaderboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:nestedScrollingEnabled="false"
+            tools:listitem="@layout/item_leaderboard_row"/>
 
     </LinearLayout>
 </ScrollView>

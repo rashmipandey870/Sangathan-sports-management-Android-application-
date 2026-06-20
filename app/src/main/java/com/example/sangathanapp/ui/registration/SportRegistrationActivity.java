@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
 
 import com.example.sangathanapp.ApiClient;
 import com.example.sangathanapp.R;
@@ -36,6 +37,7 @@ public class SportRegistrationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        com.example.sangathanapp.ui.ThemeHelper.applyTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sport_registration);
 
@@ -69,36 +71,36 @@ public class SportRegistrationActivity extends AppCompatActivity {
 
         //  LOAD DEPARTMENTS FROM BACKEND
         ApiClient.getClient()
-                .create(TeamApi.class)
-                .getDepartments()
-                .enqueue(new Callback<List<String>>() {
+            .create(TeamApi.class)
+            .getDepartments()
+            .enqueue(new Callback<List<String>>() {
 
-                    @Override
-                    public void onResponse(Call<List<String>> call, Response<List<String>> response) {
+                @Override
+                public void onResponse(Call<List<String>> call, Response<List<String>> response) {
 
-                        if (response.isSuccessful() && response.body() != null) {
+                    if (response.isSuccessful() && response.body() != null) {
 
-                            deptDropdown.setAdapter(new ArrayAdapter<>(
-                                    SportRegistrationActivity.this,
-                                    android.R.layout.simple_dropdown_item_1line,
-                                    response.body()
-                            ));
-                        }
+                        deptDropdown.setAdapter(new NoFilterAdapter<>(
+                                SportRegistrationActivity.this,
+                                R.layout.spinner_dropdown_item_light,
+                                response.body()
+                        ));
                     }
+                }
 
-                    @Override
-                    public void onFailure(Call<List<String>> call, Throwable t) {
-                        Toast.makeText(SportRegistrationActivity.this,
-                                "Failed to load departments",
-                                Toast.LENGTH_SHORT).show();
-                    }
-                });
+                @Override
+                public void onFailure(Call<List<String>> call, Throwable t) {
+                    Toast.makeText(SportRegistrationActivity.this,
+                            "Failed to load departments",
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
 
         // Gender dropdown
         String[] genders = {"BOYS", "GIRLS"};
-        genderDropdown.setAdapter(new ArrayAdapter<>(
+        genderDropdown.setAdapter(new NoFilterAdapter<>(
                 this,
-                android.R.layout.simple_dropdown_item_1line,
+                R.layout.spinner_dropdown_item_light,
                 genders
         ));
 
@@ -122,9 +124,9 @@ public class SportRegistrationActivity extends AppCompatActivity {
 
                             List<String> departments = response.body();
 
-                            deptDropdown.setAdapter(new ArrayAdapter<>(
+                            deptDropdown.setAdapter(new NoFilterAdapter<>(
                                     SportRegistrationActivity.this,
-                                    android.R.layout.simple_dropdown_item_1line,
+                                    R.layout.spinner_dropdown_item_light,
                                     departments
                             ));
 
@@ -176,9 +178,9 @@ public class SportRegistrationActivity extends AppCompatActivity {
                                 names.add(t.getTeamName());
                             }
 
-                            teamDropdown.setAdapter(new ArrayAdapter<>(
+                            teamDropdown.setAdapter(new NoFilterAdapter<>(
                                     SportRegistrationActivity.this,
-                                    android.R.layout.simple_dropdown_item_1line,
+                                    R.layout.spinner_dropdown_item_light,
                                     names
                             ));
 
@@ -258,13 +260,9 @@ public class SportRegistrationActivity extends AppCompatActivity {
 
                             Intent intent = new Intent(
                                     SportRegistrationActivity.this,
-                                    StudentTrialActivity.class
+                                    com.example.sangathanapp.DashboardActivity.class
                             );
-
-                            intent.putExtra("SPORT_ID", sport.getId());
-                            intent.putExtra("SPORT_NAME", sport.getName());
-                            intent.putExtra("USER_EMAIL", email);
-
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
                             finish();
 
@@ -298,5 +296,41 @@ public class SportRegistrationActivity extends AppCompatActivity {
                                 Toast.LENGTH_LONG).show();
                     }
                 });
+    }
+
+    private static class NoFilterAdapter<T> extends ArrayAdapter<T> {
+        private final List<T> items;
+        private final android.widget.Filter filter = new android.widget.Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                FilterResults results = new FilterResults();
+                results.values = items;
+                results.count = items.size();
+                return results;
+            }
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                notifyDataSetChanged();
+            }
+        };
+
+        public NoFilterAdapter(android.content.Context context, int resource, List<T> items) {
+            super(context, resource, items);
+            this.items = items;
+        }
+
+        public NoFilterAdapter(android.content.Context context, int resource, T[] itemsArray) {
+            super(context, resource, itemsArray);
+            this.items = new ArrayList<>();
+            for (T item : itemsArray) {
+                this.items.add(item);
+            }
+        }
+
+        @NonNull
+        @Override
+        public android.widget.Filter getFilter() {
+            return filter;
+        }
     }
 }

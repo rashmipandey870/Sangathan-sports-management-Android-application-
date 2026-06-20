@@ -7,66 +7,279 @@
     android:layout_margin="8dp"
     app:cardCornerRadius="16dp"
     app:cardElevation="6dp"
-    app:cardBackgroundColor="#121C2D">
+    app:cardBackgroundColor="#131C2D">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="14dp">
+        android:padding="16dp">
 
-        <!-- MATCH NAME -->
+        <!-- Header: Match Info, Date/Time -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_calendar"
+                app:tint="#B5C7FF" />
+
+            <TextView
+                android:id="@+id/tv_match_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10-02-2026"
+                android:textColor="#B5C7FF"
+                android:textSize="12sp"
+                android:layout_marginStart="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  •  "
+                android:textColor="#B5C7FF"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_match_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:00 AM"
+                android:textColor="#B5C7FF"
+                android:textSize="12sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <!-- Venue Badge -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_circle_dark"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/ic_location"
+                    app:tint="#FFB74D" />
+
+                <TextView
+                    android:id="@+id/tv_match_venue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ground 1"
+                    android:textColor="#FFB74D"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="4dp"
+                    android:ellipsize="end"
+                    android:maxLines="1" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- VS Section: Team A and Team B rows -->
+        <!-- Team A Layout -->
+        <RelativeLayout
+            android:id="@+id/layout_teamA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@drawable/bg_input_dark"
+            android:layout_marginBottom="6dp">
+
+            <CheckBox
+                android:id="@+id/cb_teamA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:buttonTint="@color/white"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_teamA_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/cb_teamA"
+                android:layout_centerVertical="true"
+                android:text="Team A"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp" />
+
+            <TextView
+                android:id="@+id/tv_score_A"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textColor="#5B925D"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/tv_winner_badge_A"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/tv_score_A"
+                android:layout_centerVertical="true"
+                android:text="🏆 WINNER"
+                android:textColor="#E3C65A"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <!-- VS text -->
         <TextView
-            android:id="@+id/tv_match_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CSE vs ECE"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
-
-        <!-- DATE -->
-        <TextView
-            android:id="@+id/tv_match_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="10-02-2026"
-            android:textColor="#B5C7FF"
-            android:textSize="13sp"
-            android:layout_marginTop="6dp"/>
-
-        <!-- TIME -->
-        <TextView
-            android:id="@+id/tv_match_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="10:00 AM"
-            android:textColor="#B5C7FF"
-            android:textSize="13sp"
-            android:layout_marginTop="2dp"/>
-
-        <!-- VENUE -->
-        <TextView
-            android:id="@+id/tv_match_venue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Venue not assigned"
-            android:textColor="#FFB74D"
-            android:textSize="13sp"
-            android:layout_marginTop="6dp"/>
-
-        <!-- ADD / UPDATE VENUE BUTTON -->
-        <Button
-            android:id="@+id/btn_add_venue"
-            android:layout_width="wrap_content"
-            android:layout_height="36dp"
-            android:layout_marginTop="10dp"
-            android:text="ADD / UPDATE VENUE"
+            android:text="VS"
+            android:textColor="#5B925D"
             android:textSize="12sp"
             android:textStyle="bold"
-            android:textColor="@android:color/white"
-            android:background="@drawable/btn_gradient_green2"
-            app:backgroundTint="@null"/>
+            android:layout_gravity="center_horizontal"
+            android:layout_marginVertical="2dp"/>
+
+        <!-- Team B Layout -->
+        <RelativeLayout
+            android:id="@+id/layout_teamB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:background="@drawable/bg_input_dark"
+            android:layout_marginTop="6dp">
+
+            <CheckBox
+                android:id="@+id/cb_teamB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:buttonTint="@color/white"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_teamB_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/cb_teamB"
+                android:layout_centerVertical="true"
+                android:text="Team B"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp" />
+
+            <TextView
+                android:id="@+id/tv_score_B"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textColor="#5B925D"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/tv_winner_badge_B"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/tv_score_B"
+                android:layout_centerVertical="true"
+                android:text="🏆 WINNER"
+                android:textColor="#E3C65A"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <!-- Coordinator Winner Selection Layout (only visible if isAdmin) -->
+        <LinearLayout
+            android:id="@+id/layout_coordinator_winner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="12dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Winner:"
+                android:textColor="#8A9CB4"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp"/>
+
+            <Spinner
+                android:id="@+id/sp_winner_selector"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1.2"
+                android:background="@drawable/bg_spinner" />
+
+            <Button
+                android:id="@+id/btn_confirm_winner"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="0.8"
+                android:layout_marginStart="8dp"
+                android:text="SHORTLIST"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_gradient_green_selector"
+                app:backgroundTint="@null"/>
+        </LinearLayout>
+
+        <!-- Bottom Controls for Coordinator (Venue assignment) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_marginTop="12dp">
+
+            <!-- Hidden field for compatibility with older code if referenced -->
+            <TextView
+                android:id="@+id/tv_match_name"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_add_venue"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="EDIT DETAILS"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:background="@drawable/btn_blue"
+                app:backgroundTint="@null"/>
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

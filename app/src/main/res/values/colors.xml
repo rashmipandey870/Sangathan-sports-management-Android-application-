@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!-- Primary Brand Colors -->
+    <!-- Brand Colors -->
     <color name="primary_blue">#0A3464</color>
     <color name="border_blue">#1C5D99</color>
 
-    <!-- Gradient Background -->
-    <color name="gradient_start">#1E6FA8</color>
-    <color name="gradient_middle">#2A7DB5</color>
-    <color name="gradient_end">#E3C65A</color>
+    <!-- Theme Neutral Colors (Default: Light Mode) -->
+    <color name="bg_main">#F8FAFC</color>       <!-- Light off-white background -->
+    <color name="bg_card">#FFFFFF</color>       <!-- Light card background -->
+    <color name="bg_input">#F1F5F9</color>      <!-- Light input background -->
+    <color name="text_main">#0F172A</color>     <!-- Dark text -->
+    <color name="text_secondary">#475569</color> <!-- Slate gray secondary text -->
+    <color name="border_color">#E2E8F0</color>   <!-- Light divider/border -->
+    <color name="chip_bg">#E2E8F0</color>        <!-- Light chip background -->
+    <color name="chip_text">#0284C7</color>      <!-- Light chip text -->
 
-    <!-- Card -->
-    <color name="card_white">#FDFDFD</color>
-
-    <!-- Text -->
-    <color name="text_primary">#263238</color>
-    <color name="text_gray">#7C7676</color>
-    <color name="text_hint">#9E9E9E</color>
-    <color name="link_blue">#1E88E5</color>
-    <color name="black">#0B0B0B</color>
-    <!-- Basic -->
+    <!-- Basic/Constant Colors -->
     <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
     <color name="secondary_gold">#FFC107</color>
     <color name="green">#5B925D</color>
-    <color name="purple_500">#7A66A6</color>
     <color name="red">#F62828</color>
-
+    <color name="purple_500">#7A66A6</color>
+    <color name="link_blue">#1E88E5</color>
 </resources>

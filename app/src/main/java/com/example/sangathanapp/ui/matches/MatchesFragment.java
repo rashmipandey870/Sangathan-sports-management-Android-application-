@@ -58,7 +58,7 @@ public class MatchesFragment extends Fragment {
         FixtureApi api =
                 ApiClient.getClient().create(FixtureApi.class);
 
-        api.getFixturesBySport(selectedSport, selectedGender)
+        api.getFixturesBySport(selectedSport, selectedGender, null)
                 .enqueue(new Callback<List<FixtureModel>>() {
 
                     @Override

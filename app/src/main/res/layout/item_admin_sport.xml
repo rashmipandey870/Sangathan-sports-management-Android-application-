@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="8dp"
+    android:layout_marginHorizontal="4dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="#131C2D">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header: Sport Name & Year -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/tv_admin_sport_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CRICKET"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:layout_alignParentStart="true"/>
+
+            <TextView
+                android:id="@+id/tv_admin_sport_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Year: 2025"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#1E88E5"
+                android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
+
+        <!-- Meta Details: Venue & Level -->
+        <TextView
+            android:id="@+id/tv_admin_sport_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Level: Department Level | Venue: Main Ground"
+            android:textSize="12sp"
+            android:textColor="#8A9CB4"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Coordinator Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#0A111E"
+            android:padding="12dp"
+            android:layout_marginBottom="14dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ASSIGNED COORDINATOR"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="#1E88E5"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:id="@+id/tv_admin_coord_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name: Not Assigned"
+                android:textSize="13sp"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/tv_admin_coord_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email: --"
+                android:textSize="12sp"
+                android:textColor="#8A9CB4"
+                android:layout_marginTop="2dp"/>
+
+            <TextView
+                android:id="@+id/tv_admin_coord_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone: --"
+                android:textSize="12sp"
+                android:textColor="#8A9CB4"
+                android:layout_marginTop="2dp"/>
+        </LinearLayout>
+
+        <!-- Actions Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btn_assign_coordinator"
+                android:layout_width="0dp"
+                android:layout_weight="1.2"
+                android:layout_height="48dp"
+                android:text="Assign Coord"
+                android:textAllCaps="false"
+                android:backgroundTint="#1E88E5"
+                android:textSize="13sp"
+                android:layout_marginEnd="6dp"
+                app:cornerRadius="10dp"/>
+
+            <Button
+                android:id="@+id/btn_remove_sport"
+                android:layout_width="0dp"
+                android:layout_weight="0.8"
+                android:layout_height="48dp"
+                android:text="Remove"
+                android:textAllCaps="false"
+                android:backgroundTint="#DC2626"
+                android:textSize="13sp"
+                android:layout_marginStart="6dp"
+                app:cornerRadius="10dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

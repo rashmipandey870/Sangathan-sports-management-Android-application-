@@ -13,8 +13,30 @@ public class RoleSelectionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Restore theme from SharedPreferences using ThemeHelper
+        ThemeHelper.applyTheme(this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_role_selection);
+
+        android.content.SharedPreferences sp = getSharedPreferences("APP", MODE_PRIVATE);
+        boolean isDarkMode = sp.getBoolean("DARK_MODE", true);
+
+        com.google.android.material.switchmaterial.SwitchMaterial switchTheme = findViewById(R.id.switch_theme_role);
+        if (switchTheme != null) {
+            switchTheme.setChecked(isDarkMode);
+            switchTheme.setOnCheckedChangeListener((buttonView, isChecked) -> {
+                android.content.SharedPreferences.Editor editor = sp.edit();
+                editor.putBoolean("DARK_MODE", isChecked);
+                editor.apply();
+                if (isChecked) {
+                    androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES);
+                } else {
+                    androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO);
+                }
+                recreate();
+            });
+        }
 
         Button btnStudent = findViewById(R.id.btn_student);
         Button btnCaptain = findViewById(R.id.btn_captain);

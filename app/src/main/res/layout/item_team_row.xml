@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<androidx.cardview.widget.CardView app:cardBackgroundColor="#131C2D"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -22,7 +22,7 @@
             android:text="TEAM NAME"
             android:textSize="17sp"
             android:textStyle="bold"
-            android:textColor="#0F172A"/>
+            android:textColor="@android:color/white"/>
 
         <!-- CAPTAIN -->
         <TextView
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:text="Captain: Name"
             android:textSize="14sp"
-            android:textColor="#475569"
+            android:textColor="#8A9CB4"
             android:layout_marginTop="4dp"/>
 
         <!-- DETAILS -->
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:text="Department | Gender"
             android:textSize="13sp"
-            android:textColor="#64748B"
+            android:textColor="#8A9CB4"
             android:layout_marginTop="2dp"/>
 
         <!-- BUTTON -->

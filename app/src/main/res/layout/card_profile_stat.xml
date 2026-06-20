@@ -7,7 +7,8 @@
     android:layout_margin="6dp"
     app:cardCornerRadius="14dp"
     app:cardElevation="4dp"
-    app:cardUseCompatPadding="true">
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="#131C2D">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,11 +21,12 @@
             android:id="@+id/stat_icon"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            app:tint="@color/primary_blue"
+            app:tint="#FFB74D"
             android:src="@drawable/ic_trophy" />
 
         <TextView
             android:id="@+id/stat_value"
+            android:textColor="@android:color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
@@ -38,7 +40,7 @@
             android:layout_height="wrap_content"
             android:text="Label"
             android:textSize="12sp"
-            android:textColor="@color/text_gray"
+            android:textColor="#8A9CB4"
             android:layout_marginTop="4dp" />
 
     </LinearLayout>

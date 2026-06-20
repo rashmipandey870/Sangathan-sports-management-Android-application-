@@ -29,15 +29,25 @@ public interface FixtureApi {
 
 
 
+    @GET("fixtures")
+    Call<List<FixtureModel>> getAllFixtures(
+            @Query("limit") Integer limit
+    );
+
     @GET("fixtures/{sport}")
-    Call<List<FixtureModel>> getFixturesBySport(@Path("sport") String sport,@Query("gender") String gender);
+    Call<List<FixtureModel>> getFixturesBySport(
+            @Path("sport") String sport,
+            @Query("gender") String gender,
+            @Query("round") Integer round
+    );
 
-
-
-
+    @POST("admin/update-winner/{id}")
+    Call<ApiResponse> updateWinner(
+            @Path("id") String fixtureId,
+            @Body Map<String, String> body
+    );
 
     @POST("admin/update-venue/{id}")
-
     Call<ApiResponse> updateVenue(
             @Path("id") String fixtureId,
             @Body Map<String, String> body

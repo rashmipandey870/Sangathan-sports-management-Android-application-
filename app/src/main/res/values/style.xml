@@ -2,8 +2,8 @@
 <resources>
 
 <style name="ChipDark">
-    <item name="android:background">#1C2A44</item>
-    <item name="android:textColor">#9EC8FF</item>
+    <item name="android:background">@color/chip_bg</item>
+    <item name="android:textColor">@color/chip_text</item>
     <item name="android:paddingHorizontal">14dp</item>
     <item name="android:paddingVertical">6dp</item>
     <item name="android:layout_marginEnd">8dp</item>

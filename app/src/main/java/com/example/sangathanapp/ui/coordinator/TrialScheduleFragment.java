@@ -129,12 +129,12 @@ public class TrialScheduleFragment extends Fragment {
 
         TrialRequest request =
                 new TrialRequest(
-                        String.valueOf(sportId),
-                        teamName,
+                        "SPORT",
                         sportName,
                         date,
                         time,
-                        venue
+                        venue,
+                        "Trial scheduled by Coordinator"
                 );
 
         api.createTrial(request).enqueue(new Callback<ApiResponse>() {

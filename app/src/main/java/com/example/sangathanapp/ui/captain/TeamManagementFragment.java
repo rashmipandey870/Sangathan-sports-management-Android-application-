@@ -23,9 +23,9 @@ import retrofit2.*;
 public class TeamManagementFragment extends Fragment {
 
     private RecyclerView recyclerCandidates;
-
-
+    private android.widget.TextView tvCaptainName;
     private String teamName;
+
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -46,6 +46,7 @@ public class TeamManagementFragment extends Fragment {
         );
 
         recyclerCandidates = view.findViewById(R.id.recycler_candidates);
+        tvCaptainName = view.findViewById(R.id.tv_team_captain_name);
         recyclerCandidates.setLayoutManager(
                 new LinearLayoutManager(getContext())
         );
@@ -68,6 +69,13 @@ public class TeamManagementFragment extends Fragment {
 
                         if (response.isSuccessful() && response.body() != null) {
 
+                            String captain = response.body().getCaptainName();
+                            if (captain != null && !captain.isEmpty()) {
+                                tvCaptainName.setText("Captain: " + captain);
+                            } else {
+                                tvCaptainName.setText("Captain: Not Assigned");
+                            }
+
                             List<StudentRegistrationModel> players =
                                     response.body().getPlayers();
 
@@ -78,8 +86,8 @@ public class TeamManagementFragment extends Fragment {
                             }
 
                             recyclerCandidates.setAdapter(
-                                    new StudentAdapter(players, "CAPTAIN")
-                            );
+                                    new StudentAdapter(players, "CAPTAIN_TEAM")
+                                );
                         }
                     }
 

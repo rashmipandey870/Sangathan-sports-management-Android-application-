@@ -22,6 +22,7 @@ public class StudentTrialActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        com.example.sangathanapp.ui.ThemeHelper.applyTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_trial);
 
@@ -35,8 +36,10 @@ public class StudentTrialActivity extends AppCompatActivity {
 
     private void loadTrial() {
 
-        String teamName = getSharedPreferences("APP", MODE_PRIVATE)
-                .getString("TEAM_NAME", "");
+        String teamName = getIntent().getStringExtra("TEAM_NAME");
+        if (teamName == null || teamName.isEmpty()) {
+            teamName = getSharedPreferences("APP", MODE_PRIVATE).getString("TEAM_NAME", "");
+        }
 
         Log.d("TRIAL_DEBUG", "TEAM_NAME: " + teamName);
 

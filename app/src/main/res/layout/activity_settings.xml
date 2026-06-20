@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F6F8FB">
+    android:background="@color/bg_main">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -46,6 +46,42 @@
                 android:textStyle="bold"
                 android:textColor="@color/primary_blue"
                 android:layout_marginBottom="16dp"/>
+
+            <!-- THEME SWITCHER -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:padding="16dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_settings"/>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="Dark Mode Theme"
+                        android:textSize="16sp"
+                        android:layout_marginStart="12dp"
+                        android:textColor="@color/text_main"/>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switch_dark_mode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <!-- FEEDBACK -->
             <!-- This clickable area should have the ID, not the TextView inside -->

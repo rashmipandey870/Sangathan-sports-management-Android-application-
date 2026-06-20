@@ -1,38 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/white"
+    android:background="#0A111E"
     tools:context=".ui.events.EventsFragment">
 
     <!-- TITLE -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Upcoming Matches"
-        android:textSize="20sp"
+        android:text="Upcoming Tournaments"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@color/primary_blue"
-        android:layout_marginBottom="8dp"/>
+        android:textColor="@android:color/white"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_marginBottom="4dp"/>
 
-    <!-- SELECT SPORT -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View schedules and fixtures across all categories"
+        android:textSize="13sp"
+        android:textColor="#8A9CB4"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- CONTROLS CARD -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="#131C2D"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Gender & Team Filter Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:weightSum="2">
+
+                <!-- Gender Spinner Container -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GENDER CATEGORY"
+                        android:textColor="#FFD700"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp"/>
+
+                    <Spinner
+                        android:id="@+id/sp_events_gender"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_spinner" />
+                </LinearLayout>
+
+                <!-- My Team Switch Container -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="end"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="FILTER BY TEAM"
+                        android:textColor="#FFD700"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp"
+                        android:layout_gravity="end"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switch_my_team"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="My Team"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        android:thumbTint="#1E88E5"
+                        app:trackTint="#1E2A44"
+                        android:theme="@style/Widget.AppCompat.CompoundButton.Switch"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- SELECT SPORT HEADER -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Select Sport"
         android:textSize="14sp"
-        android:textColor="@color/text_gray"
-        android:layout_marginBottom="6dp"/>
+        android:textStyle="bold"
+        android:textColor="#8A9CB4"
+        android:layout_marginBottom="8dp"/>
 
     <!-- SPORT ICONS -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/sportRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="12dp"
         tools:listitem="@layout/item_sport_circle"/>
 
     <!-- MATCH LIST -->

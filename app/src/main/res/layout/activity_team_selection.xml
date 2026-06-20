@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F5F7FB">
+    android:background="#0A111E">
 
     <!-- HEADER -->
     <LinearLayout
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:text="Selected: 0"
             android:textStyle="bold"
-            android:textColor="#0F172A"
+            android:textColor="@android:color/white"
             android:textSize="14sp"/>
 
     </LinearLayout>
@@ -61,7 +61,8 @@
         android:text="Finalize Team"
         android:textStyle="bold"
         android:textColor="@android:color/white"
-        android:background="@drawable/btn_primary"
+        android:background="@drawable/gradient_btn_blue"
+        app:backgroundTint="@null"
         android:layout_margin="12dp"/>
 
 </LinearLayout>

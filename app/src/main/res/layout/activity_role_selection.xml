@@ -1,46 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp"
-    android:background="#0B1220">
+    android:background="@color/bg_main"
+    android:fillViewport="true">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Select Your Role"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="32dp"/>
-
-    <Button
-        android:id="@+id/btn_student"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Student"
-        android:layout_marginBottom="12dp"/>
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="24dp">
 
-    <Button
-        android:id="@+id/btn_captain"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Captain"
-        android:layout_marginBottom="12dp"/>
+        <!-- Theme Toggle Switch -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end|center_vertical"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp">
 
-    <Button
-        android:id="@+id/btn_coordinator"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sports Coordinator"
-        android:layout_marginBottom="12dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dark Mode"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
 
-    <Button
-        android:id="@+id/btn_head_admin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Head Admin"/>
-</LinearLayout>
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_theme_role"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/sangathan_logo"
+            android:contentDescription="Sangathan App Logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SANGATHAN"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_main"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:letterSpacing="0.1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sports Management Portal"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:layout_marginBottom="40dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Your Role to Continue"
+            android:textSize="16sp"
+            android:textColor="@color/primary_blue"
+            android:layout_marginBottom="24dp"
+            android:textStyle="bold" />
+
+        <!-- Student Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_student"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="14dp"
+            android:text="Student"
+            android:textColor="@color/text_main"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="start|center_vertical"
+            android:paddingStart="24dp"
+            app:icon="@drawable/ic_user"
+            app:iconSize="24dp"
+            app:iconTint="#1E88E5"
+            app:iconPadding="16dp"
+            app:cornerRadius="12dp"
+            app:strokeColor="@color/border_color"
+            app:strokeWidth="1dp"
+            android:backgroundTint="@color/bg_card" />
+
+        <!-- Captain Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_captain"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="14dp"
+            android:text="Team Captain"
+            android:textColor="@color/text_main"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="start|center_vertical"
+            android:paddingStart="24dp"
+            app:icon="@drawable/ic_trophy"
+            app:iconSize="24dp"
+            app:iconTint="#FFB74D"
+            app:iconPadding="16dp"
+            app:cornerRadius="12dp"
+            app:strokeColor="@color/border_color"
+            app:strokeWidth="1dp"
+            android:backgroundTint="@color/bg_card" />
+
+        <!-- Coordinator Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_coordinator"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="14dp"
+            android:text="Sports Coordinator"
+            android:textColor="@color/text_main"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="start|center_vertical"
+            android:paddingStart="24dp"
+            app:icon="@drawable/ic_fixtures"
+            app:iconSize="24dp"
+            app:iconTint="#5B925D"
+            app:iconPadding="16dp"
+            app:cornerRadius="12dp"
+            app:strokeColor="@color/border_color"
+            app:strokeWidth="1dp"
+            android:backgroundTint="@color/bg_card" />
+
+        <!-- Head Admin Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_head_admin"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="40dp"
+            android:text="Head Admin"
+            android:textColor="@color/text_main"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="start|center_vertical"
+            android:paddingStart="24dp"
+            app:icon="@drawable/ic_settings"
+            app:iconSize="24dp"
+            app:iconTint="#FF5252"
+            app:iconPadding="16dp"
+            app:cornerRadius="12dp"
+            app:strokeColor="@color/border_color"
+            app:strokeWidth="1dp"
+            android:backgroundTint="@color/bg_card" />
+
+    </LinearLayout>
+</ScrollView>

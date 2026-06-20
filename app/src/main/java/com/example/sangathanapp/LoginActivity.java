@@ -26,17 +26,22 @@ public class LoginActivity extends AppCompatActivity {
 package com.example.sangathanapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
 import com.example.sangathanapp.ui.captain.network.CaptainLoginApi;
 import com.example.sangathanapp.ui.captain.network.CaptainLoginRequest;
 import com.example.sangathanapp.ui.captain.network.CaptainLoginResponse;
+import com.example.sangathanapp.ui.registration.SportModel;
+import com.example.sangathanapp.ui.registration.network.SportApi;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
 import retrofit2.*;
 
@@ -45,11 +50,14 @@ public class LoginActivity extends AppCompatActivity {
     private EditText usernameInput, passwordInput;
     private Button loginButton;
     private TextView roleTitle;
+    private View layoutSport;
+    private AutoCompleteTextView sportDropdown;
 
     private String userRole;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        com.example.sangathanapp.ui.ThemeHelper.applyTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_activity);
 
@@ -66,6 +74,8 @@ public class LoginActivity extends AppCompatActivity {
         passwordInput = findViewById(R.id.password_input);
         loginButton = findViewById(R.id.login_button);
         roleTitle = findViewById(R.id.role_title);
+        layoutSport = findViewById(R.id.layout_login_sport);
+        sportDropdown = findViewById(R.id.login_sport_dropdown);
     }
 
     private void setupUIForRole() {
@@ -78,12 +88,46 @@ public class LoginActivity extends AppCompatActivity {
             usernameInput.setHint("Team Name (e.g. BCA BOYS CRICKET)");
             passwordInput.setHint("Enter PIN");
             passwordInput.setVisibility(View.VISIBLE);
+            layoutSport.setVisibility(View.GONE);
 
         } else {
 
             usernameInput.setHint("Username");
             passwordInput.setVisibility(View.VISIBLE);
+            if (userRole.equalsIgnoreCase("coordinator")) {
+                layoutSport.setVisibility(View.VISIBLE);
+                loadSportsForLogin();
+            } else {
+                layoutSport.setVisibility(View.GONE);
+            }
         }
+    }
+
+    private void loadSportsForLogin() {
+        SportApi api = ApiClient.getClient().create(SportApi.class);
+        api.getSports(null).enqueue(new Callback<List<SportModel>>() {
+            @Override
+            public void onResponse(Call<List<SportModel>> call, Response<List<SportModel>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    List<String> names = new ArrayList<>();
+                    for (SportModel s : response.body()) {
+                        names.add(s.getName().toUpperCase());
+                    }
+                    sportDropdown.setAdapter(new ArrayAdapter<>(
+                            LoginActivity.this,
+                            android.R.layout.simple_spinner_dropdown_item,
+                            names
+                    ));
+                } else {
+                    Toast.makeText(LoginActivity.this, "No sports available", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<SportModel>> call, Throwable t) {
+                Toast.makeText(LoginActivity.this, "Failed to load sports: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void setupLoginAction() {
@@ -122,6 +166,23 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
 
+                SharedPreferences.Editor editor = getSharedPreferences("APP", MODE_PRIVATE).edit();
+                editor.putString("STUDENT_USERNAME", username);
+                editor.putString("COORDINATOR_EMAIL", username);
+
+                if (userRole.equalsIgnoreCase("coordinator")) {
+                    String selectedSport = sportDropdown.getText().toString().trim();
+                    if (selectedSport.isEmpty()) {
+                        sportDropdown.setError("Assigned Sport is required");
+                        Toast.makeText(LoginActivity.this, "Please select your assigned sport", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    editor.putString("COORDINATOR_SPORT", selectedSport);
+                } else {
+                    editor.remove("COORDINATOR_SPORT");
+                }
+
+                editor.apply();
                 redirectUser();
             }
         });
@@ -150,10 +211,12 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT
                     ).show();
 
-                    //  SAVE TEAM NAME FOR FUTURE USE
+                    //  SAVE TEAM NAME AND ID FOR FUTURE USE
+                    String teamId = response.body().getTeam().getId();
                     getSharedPreferences("APP", MODE_PRIVATE)
                             .edit()
                             .putString("TEAM_NAME", teamName)
+                            .putString("TEAM_ID", teamId)
                             .apply();
 
                     redirectUser();

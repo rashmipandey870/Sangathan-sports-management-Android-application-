@@ -42,6 +42,30 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder> {
         TeamModel team = teams.get(position);
 
         holder.tvTeamName.setText(team.getTeamName());
+        
+        if (team.getCaptainName() != null) {
+            holder.tvCaptain.setText("Captain: " + team.getCaptainName());
+        } else {
+            holder.tvCaptain.setText("Captain: Not Assigned");
+        }
+        
+        if (team.getPin() != null) {
+            holder.tvPin.setText("PIN: " + team.getPin());
+        } else {
+            holder.tvPin.setText("");
+        }
+
+        if (team.getSport() != null) {
+            holder.tvSport.setText(team.getSport().toUpperCase());
+        } else {
+            holder.tvSport.setText("");
+        }
+
+        if (team.getGender() != null) {
+            holder.tvGender.setText(team.getGender().toUpperCase());
+        } else {
+            holder.tvGender.setText("");
+        }
 
         holder.itemView.setOnClickListener(v -> {
 
@@ -64,10 +88,18 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder> {
     static class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvTeamName;
+        TextView tvCaptain;
+        TextView tvPin;
+        TextView tvSport;
+        TextView tvGender;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTeamName = itemView.findViewById(R.id.tv_team_name);
+            tvCaptain = itemView.findViewById(R.id.tv_team_captain);
+            tvPin = itemView.findViewById(R.id.tv_team_pin);
+            tvSport = itemView.findViewById(R.id.tv_team_sport);
+            tvGender = itemView.findViewById(R.id.tv_team_gender);
         }
     }
 }

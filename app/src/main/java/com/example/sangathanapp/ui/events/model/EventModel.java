@@ -8,6 +8,15 @@ public class EventModel {
     private String matchTime;
     private String venue;
     private String sport;
+    private String winner;
+
+    public String getWinner() {
+        return winner;
+    }
+
+    public void setWinner(String winner) {
+        this.winner = winner;
+    }
 
     public String getSport()
     {
@@ -15,6 +24,14 @@ public class EventModel {
     }
     public String getMatchTitle() {
         return teamA + " vs " + teamB;
+    }
+
+    public String getTeamA() {
+        return teamA;
+    }
+
+    public String getTeamB() {
+        return teamB;
     }
 
     public String getDate() {

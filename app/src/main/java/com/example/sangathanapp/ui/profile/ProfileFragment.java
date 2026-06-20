@@ -74,7 +74,7 @@ public class ProfileFragment extends Fragment {
 
         if (btnLogout != null) {
             btnLogout.setOnClickListener(v -> {
-                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                Intent intent = new Intent(getActivity(), com.example.sangathanapp.ui.RoleSelectionActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 requireActivity().finish();

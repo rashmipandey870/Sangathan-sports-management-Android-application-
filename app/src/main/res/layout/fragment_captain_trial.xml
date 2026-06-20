@@ -1,37 +1,165 @@
-<LinearLayout android:orientation="vertical"
-    android:padding="16dp"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:background="#0A111E">
 
-    <EditText
-        android:id="@+id/et_date"
-        android:hint="Date"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"/>
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <EditText
-        android:id="@+id/et_time"
-        android:layout_width="wrap_content"
-        android:hint="Time"
-        android:layout_height="wrap_content"/>
+        <!-- 🔹 SECTION TITLE -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selection Trials"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="4dp"/>
 
-    <EditText
-        android:id="@+id/et_venue"
-        android:hint="Venue"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"/>
+        <TextView
+            android:id="@+id/tv_captain_team_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Schedule team trials for student candidates"
+            android:textSize="14sp"
+            android:textColor="#8A9CB4"
+            android:layout_marginBottom="24dp"/>
 
-    <EditText
-        android:id="@+id/et_instruction"
-        android:hint="Instructions"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"/>
+        <!-- 🔹 FORM CARD -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#131C2D">
 
-    <Button
-        android:id="@+id/btn_create_trial"
-        android:text="Create Trial"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
 
-</LinearLayout>
+                <!-- FORM TITLE -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trial Schedule Details"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#1E88E5"
+                    android:layout_marginBottom="16dp"/>
+
+                <!-- TRIAL DATE -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Trial Date (e.g. 25 Jan 2025)"
+                    android:textColorHint="#8A9CB4"
+                    app:hintTextColor="#1E88E5"
+                    app:boxStrokeColor="#1C5D99"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:inputType="text"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- TRIAL TIME -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Trial Time (e.g. 10:00 AM)"
+                    android:textColorHint="#8A9CB4"
+                    app:hintTextColor="#1E88E5"
+                    app:boxStrokeColor="#1C5D99"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:inputType="text"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- VENUE -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Venue (e.g. Main Ground)"
+                    android:textColorHint="#8A9CB4"
+                    app:hintTextColor="#1E88E5"
+                    app:boxStrokeColor="#1C5D99"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_venue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:inputType="text"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- INSTRUCTIONS -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Instructions / Criteria"
+                    android:textColorHint="#8A9CB4"
+                    app:hintTextColor="#1E88E5"
+                    app:boxStrokeColor="#1C5D99"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_instruction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:inputType="textLongMessage"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- CREATE BUTTON -->
+                <Button
+                    android:id="@+id/btn_create_trial"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Schedule Team Trial"
+                    android:textAllCaps="false"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:backgroundTint="#1E88E5"
+                    app:cornerRadius="12dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#131C2D"
+    android:padding="20dp">
+
+    <!-- Coordinator Name -->
+    <EditText
+        android:id="@+id/et_dialog_coord_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Coordinator Name"
+        android:background="@drawable/bg_input_dark"
+        android:padding="12dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="#8A9CB4"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Coordinator Email -->
+    <EditText
+        android:id="@+id/et_dialog_coord_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Coordinator Email"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/bg_input_dark"
+        android:padding="12dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="#8A9CB4"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Coordinator Phone -->
+    <EditText
+        android:id="@+id/et_dialog_coord_phone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Coordinator Phone"
+        android:inputType="phone"
+        android:background="@drawable/bg_input_dark"
+        android:padding="12dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="#8A9CB4"
+        android:layout_marginBottom="12dp"/>
+
+</LinearLayout>

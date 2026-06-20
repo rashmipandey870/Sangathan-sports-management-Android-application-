@@ -1,12 +1,16 @@
 package com.example.sangathanapp.ui.coordinator;
 
 import android.app.AlertDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+import com.example.sangathanapp.ui.registration.SportModel;
+import com.example.sangathanapp.ui.registration.network.SportApi;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,10 +28,12 @@ import retrofit2.Response;
 
 public class CreateTeamFragment extends Fragment {
 
-    private EditText etTeamName, etCaptainName, etEnrollment, etDepartment;
-    private Spinner spGender, spSport;
+    private EditText etTeamName, etCaptainName, etEnrollment;
+    private Spinner spGender, spSport, spDepartment;
     private Button btnCreateTeam;
     private TextView tvGeneratedPin;
+    private TextView tvFixedSport, tvSportLabel;
+    private String assignedSport = null;
 
     @Nullable
     @Override
@@ -44,15 +50,18 @@ public class CreateTeamFragment extends Fragment {
         etTeamName = view.findViewById(R.id.et_team_name);
         etCaptainName = view.findViewById(R.id.et_captain_name);
         etEnrollment = view.findViewById(R.id.et_captain_enrollment);
-        etDepartment = view.findViewById(R.id.et_captain_department);
+        spDepartment = view.findViewById(R.id.sp_captain_department);
 
         spGender = view.findViewById(R.id.sp_gender);
         spSport = view.findViewById(R.id.sp_sport);
+        tvFixedSport = view.findViewById(R.id.tv_fixed_sport);
+        tvSportLabel = view.findViewById(R.id.tv_sport_label);
 
         btnCreateTeam = view.findViewById(R.id.btn_create_team);
         tvGeneratedPin = view.findViewById(R.id.tv_generated_pin);
 
         setupSpinners();
+        checkCoordinatorSport(view);
 
         btnCreateTeam.setOnClickListener(v -> createTeam());
     }
@@ -79,6 +88,53 @@ public class CreateTeamFragment extends Fragment {
                         android.R.layout.simple_spinner_dropdown_item,
                         sports);
         spSport.setAdapter(sportAdapter);
+
+        String[] departments = {
+                "COMPUTER SCIENCE & ENGINEERING",
+                "INFORMATION TECHNOLOGY",
+                "ELECTRONICS & COMMUNICATION",
+                "MECHANICAL ENGINEERING",
+                "CIVIL ENGINEERING",
+                "BUSINESS ADMINISTRATION"
+        };
+
+        ArrayAdapter<String> deptAdapter =
+                new ArrayAdapter<>(requireContext(),
+                        android.R.layout.simple_spinner_dropdown_item,
+                        departments);
+        spDepartment.setAdapter(deptAdapter);
+    }
+
+    private void checkCoordinatorSport(View view) {
+        SharedPreferences sp = requireContext().getSharedPreferences("APP", Context.MODE_PRIVATE);
+        String cachedSport = sp.getString("COORDINATOR_SPORT", "");
+        if (!TextUtils.isEmpty(cachedSport)) {
+            assignedSport = cachedSport.trim();
+            spSport.setVisibility(View.GONE);
+            tvFixedSport.setText(assignedSport.toUpperCase());
+            tvFixedSport.setVisibility(View.VISIBLE);
+            tvSportLabel.setText("Assigned Sport");
+        } else {
+            String coordinatorEmail = sp.getString("COORDINATOR_EMAIL", "");
+            if (!TextUtils.isEmpty(coordinatorEmail)) {
+                SportApi sportApi = ApiClient.getClient().create(SportApi.class);
+                sportApi.getCoordinatorSport(coordinatorEmail).enqueue(new Callback<SportModel>() {
+                    @Override
+                    public void onResponse(Call<SportModel> call, Response<SportModel> response) {
+                        if (!isAdded()) return;
+                        if (response.isSuccessful() && response.body() != null) {
+                            assignedSport = response.body().getName();
+                            spSport.setVisibility(View.GONE);
+                            tvFixedSport.setText(assignedSport.toUpperCase());
+                            tvFixedSport.setVisibility(View.VISIBLE);
+                            tvSportLabel.setText("Assigned Sport");
+                        }
+                    }
+                    @Override
+                    public void onFailure(Call<SportModel> call, Throwable t) {}
+                });
+            }
+        }
     }
 
 
@@ -89,14 +145,13 @@ public class CreateTeamFragment extends Fragment {
         String teamName = etTeamName.getText().toString().trim();
         String captainName = etCaptainName.getText().toString().trim();
         String enrollment = etEnrollment.getText().toString().trim();
-        String department = etDepartment.getText().toString().trim();
+        String department = spDepartment.getSelectedItem().toString();
         String gender = spGender.getSelectedItem().toString();
-        String sport = spSport.getSelectedItem().toString().toLowerCase();
+        String sport = (assignedSport != null) ? assignedSport.toLowerCase() : spSport.getSelectedItem().toString().toLowerCase();
 
         if (TextUtils.isEmpty(teamName) ||
                 TextUtils.isEmpty(captainName) ||
-                TextUtils.isEmpty(enrollment) ||
-                TextUtils.isEmpty(department)) {
+                TextUtils.isEmpty(enrollment)) {
 
             Toast.makeText(getContext(),
                     "Please fill all fields",
@@ -134,9 +189,15 @@ public class CreateTeamFragment extends Fragment {
 
                     clearFields(); //
                 } else {
-                    Toast.makeText(requireContext(),
-                            "Failed to create team",
-                            Toast.LENGTH_SHORT).show();
+                    String errorMsg = "Failed to create team";
+                    try {
+                        if (response.errorBody() != null) {
+                            errorMsg = new org.json.JSONObject(response.errorBody().string()).getString("message");
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    Toast.makeText(requireContext(), errorMsg, Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -159,6 +220,6 @@ public class CreateTeamFragment extends Fragment {
         etTeamName.setText("");
         etCaptainName.setText("");
         etEnrollment.setText("");
-        etDepartment.setText("");
+        spDepartment.setSelection(0);
     }
 }

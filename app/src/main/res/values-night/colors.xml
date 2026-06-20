@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Colors -->
+    <color name="primary_blue">#0A3464</color>
+    <color name="border_blue">#1C5D99</color>
+
+    <!-- Theme Neutral Colors (Dark Mode) -->
+    <color name="bg_main">#0B0F19</color>       <!-- Dark background -->
+    <color name="bg_card">#131C2D</color>       <!-- Dark card background -->
+    <color name="bg_input">#162031</color>      <!-- Dark input background -->
+    <color name="text_main">#FFFFFF</color>     <!-- White text -->
+    <color name="text_secondary">#8A9CB4</color> <!-- Light gray secondary text -->
+    <color name="border_color">#1C2A44</color>   <!-- Dark divider/border -->
+    <color name="chip_bg">#1C2A44</color>        <!-- Dark chip background -->
+    <color name="chip_text">#9EC8FF</color>      <!-- Dark chip text -->
+
+    <!-- Basic/Constant Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="secondary_gold">#FFC107</color>
+    <color name="green">#5B925D</color>
+    <color name="red">#F62828</color>
+    <color name="purple_500">#7A66A6</color>
+    <color name="link_blue">#1E88E5</color>
+</resources>

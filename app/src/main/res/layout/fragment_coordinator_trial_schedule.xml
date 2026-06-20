@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7FA">
+    android:background="#0A111E">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             app:cardCornerRadius="16dp"
             app:cardElevation="6dp"
-            app:cardBackgroundColor="@color/white">
+            app:cardBackgroundColor="#131C2D">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -67,12 +67,21 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Trial Date">
+                    android:hint="Trial Date"
+        android:textColorHint="#8A9CB4"
+        app:hintTextColor="#1E88E5"
+        app:boxStrokeColor="#1C5D99"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/input_trial_date"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- TRIAL TIME -->
@@ -80,12 +89,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:hint="Trial Time">
+                    android:hint="Trial Time"
+        android:textColorHint="#8A9CB4"
+        app:hintTextColor="#1E88E5"
+        app:boxStrokeColor="#1C5D99"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/input_trial_time"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- VENUE -->
@@ -93,12 +111,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:hint="Venue">
+                    android:hint="Venue"
+                    android:textColorHint="#8A9CB4"
+                    app:hintTextColor="#1E88E5"
+                    app:boxStrokeColor="#1C5D99"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/input_trial_venue"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- SAVE BUTTON -->
@@ -110,7 +137,7 @@
                     android:text="Update Trial Details"
                     android:textAllCaps="false"
                     android:textSize="15sp"
-                    android:backgroundTint="@color/primary_blue"/>
+                    android:backgroundTint="#1E88E5"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

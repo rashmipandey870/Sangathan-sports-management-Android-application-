@@ -1,51 +1,211 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#0A111E"
+    android:fillViewport="true">
 
     <LinearLayout
-        android:padding="16dp"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fixture Management"
+            android:textColor="@android:color/white"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:layout_marginBottom="6dp" />
 
         <TextView
-            android:text="Fixture Management"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:textSize="22sp"
+            android:layout_height="wrap_content"
+            android:text="Create and track brackets for the tournament"
+            android:textColor="#8A9CB4"
+            android:textSize="14sp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Controls Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#131C2D"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Sport Spinner Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SPORT CATEGORY"
+                        android:textColor="#5B925D"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp"/>
+
+                    <Spinner
+                        android:id="@+id/sp_sport"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_spinner" />
+
+                    <TextView
+                        android:id="@+id/tv_fixed_sport"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_spinner"
+                        android:gravity="center_vertical"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <!-- Dropdowns Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginBottom="16dp">
+
+                    <!-- Gender Spinner Container -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="GENDER"
+                            android:textColor="#5B925D"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="4dp"/>
+
+                        <Spinner
+                            android:id="@+id/sp_gender"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@drawable/bg_spinner" />
+                    </LinearLayout>
+
+                    <!-- Round Spinner Container -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TOURNAMENT ROUND"
+                            android:textColor="#5B925D"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="4dp"/>
+
+                        <Spinner
+                            android:id="@+id/sp_round"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@drawable/bg_spinner" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Dates/Times Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginBottom="16dp">
+
+                    <Button
+                        android:id="@+id/btn_add_dates"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="Set Dates"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:background="@drawable/btn_blue"
+                        app:backgroundTint="@null"/>
+
+                    <Button
+                        android:id="@+id/btn_add_times"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="Set Times"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:background="@drawable/btn_blue"
+                        app:backgroundTint="@null"/>
+
+                </LinearLayout>
+
+                <!-- Generate Button -->
+                <Button
+                    android:id="@+id/btn_generate_fixture"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="Generate Fixtures"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:background="@drawable/btn_gradient_green_selector"
+                    app:backgroundTint="@null" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Section Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fixtures Brackets"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="12dp" />
 
-        <Spinner
-            android:id="@+id/sp_gender"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginBottom="10dp"/>
-
-        <Button
-            android:id="@+id/btn_add_dates"
-            android:text="Add Dates"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"/>
-
-        <Button
-            android:id="@+id/btn_add_times"
-            android:text="Add Times"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"/>
-
-        <Button
-            android:id="@+id/btn_generate_fixture"
-            android:text="Generate Fixtures"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:backgroundTint="#16A34A"
-            android:textColor="@android:color/white"/>
-
+        <!-- RecyclerView -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_fixtures"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false" />
 
     </LinearLayout>
 </ScrollView>
